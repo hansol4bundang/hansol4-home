@@ -400,7 +400,7 @@ footer .wrap { padding-inline: 0; }
 .hero-copy .lead { margin-top: 18px; font-size: 1.12rem; max-width: 30em; }
 .hero-note { position: absolute; right: 16px; bottom: 14px; z-index: 2; background: rgba(11, 42, 107, 0.78); color: #FFFFFF; font-size: 0.9rem; line-height: 1.6; padding: 3px 12px; border-radius: 99px; }
 .hero .stats { margin-top: 24px; }
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
   .hero { padding-block: 20px 24px; }
   .hero-banner { display: block; min-height: 0; border-radius: 18px; }
   .hero-bg { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-position: 58% 50%; }
@@ -421,7 +421,7 @@ footer .wrap { padding-inline: 0; }
 .hero-stats-wrap { width: calc(100% - 32px); max-width: 1120px; margin: 0 auto; }
 .hero .stats { margin-top: 28px; }
 .hero-note { right: max(16px, calc((100% - 1120px) / 2 + 0px)); }
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
   .hero { padding: 0 0 24px; }
   .hero-banner { border-radius: 0; min-height: 0; }
   .hero-bg { width: 100%; }
@@ -436,7 +436,7 @@ footer .wrap { padding-inline: 0; }
 .hero-copy { width: min(560px, 54%); padding: 40px 0; }
 .hero-copy h1 { font-size: clamp(1.8rem, 3.1vw, 2.7rem); margin-top: 14px; }
 .hero-copy .lead { margin-top: 14px; font-size: 1.1rem; max-width: 26em; }
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
   .hero-bg { width: 100%; object-position: 60% 30%; }
   .hero-copy { width: 100%; padding: 4px 0 24px; }
   .hero-copy h1 { font-size: clamp(1.6rem, 6.6vw, 2.2rem); }
@@ -445,7 +445,7 @@ footer .wrap { padding-inline: 0; }
 /* 첫 화면 글자 정리: 목표를 제목으로 크게, 위에는 작은 이름표, 아래는 한 줄 설명 */
 .hero-copy h1 { font-size: clamp(2.3rem, 4.6vw, 3.8rem); line-height: 1.25; letter-spacing: -0.02em; }
 .hero-copy .lead { max-width: 24em; }
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
   .hero-copy h1 { font-size: clamp(2rem, 8.4vw, 2.8rem); }
 }
 /* 첫 화면: 이미지를 키우고 핵심 수치 패널을 이미지 아래쪽에 포함 */
@@ -455,7 +455,7 @@ footer .wrap { padding-inline: 0; }
 .hero-stats-wrap { position: relative; z-index: 1; margin: 0 auto 32px; }
 .hero .stats { margin-top: 0; background: rgba(5, 40, 122, 0.72); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); box-shadow: 0 12px 32px rgba(8, 28, 80, 0.35); }
 .hero-note { top: 14px; bottom: auto; }
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
   .hero { padding: 0 0 12px; }
   .hero-banner { display: block; min-height: 0; }
   .hero-bg { aspect-ratio: 4 / 3; object-position: 60% 30%; }
@@ -483,10 +483,11 @@ footer .wrap { padding-inline: 0; }
 .hero-copy { padding: 32px 0 12px; }
 .hero-stats-wrap { margin: 0 auto 20px; }
 .hero .stat { padding: 14px 22px; }
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
   .hero-bg { aspect-ratio: 16 / 9; }
-  .hero-fade { aspect-ratio: 16 / 9; }
-  .hero-copy { padding: 0 0 16px; }
+  /* 모바일·태블릿: 이미지 위, 텍스트 아래. 이미지 아래쪽만 흰색으로 자연스럽게 이어지게 */
+  .hero-fade { aspect-ratio: 16 / 9; background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, #FFFFFF 100%); }
+  .hero-copy { padding: 20px 0 16px; }
   .hero-stats-wrap { margin: 0 auto 16px; }
   .hero .stat { padding: 12px 18px; }
 }
