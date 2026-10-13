@@ -748,6 +748,14 @@ h1, h2, h3 { line-height: 1.28; }
   .pg-box { padding: 18px 16px 12px; border-radius: 16px; }
   .pg-box .pg { margin-top: 8px; }
 }
+
+/* 항목 목록(.group): 바깥 둥근 테두리 없이 항목 사이 구분선만 */
+.group { background: transparent; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+.g-row { border-top: 1px solid #C9D3E2; }
+.g-row:first-child { border-top: 0; }
+.g-row { padding-inline: 0; }
+.g-row.hi { margin-inline: -16px; padding-inline: 16px; border-radius: 12px; border-top-color: transparent; }
+.g-row.hi + .g-row { border-top-color: transparent; }
 </style>
 
 <header class="header" id="header">
