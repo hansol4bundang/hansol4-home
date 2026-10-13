@@ -755,6 +755,34 @@ h1, h2, h3 { line-height: 1.28; }
 .g-row:first-child { border-top: 0; }
 .g-row { padding-inline: 0; }
 .g-row.hi { background: transparent; }
+
+/* 둥근 상자 → 구분선 방식으로 통일 (한 일/할 일, 명단, 연락처) */
+.tl2 { gap: 0 40px; }
+.tl-col { border: 0; border-radius: 0; background: transparent; overflow: visible; }
+.tl-h, .tl-col.done .tl-h, .tl-col.next .tl-h { background: transparent; color: var(--ink); padding: 0 0 12px; border-bottom: 2px solid var(--ink); }
+.tl-col.done .tl-ic { background: var(--ink); color: #FFFFFF; }
+.tl-col.next .tl-ic { background: var(--accent); color: #FFFFFF; }
+.tl-list { padding: 0; }
+.tl-list li { padding: 16px 0; border-top: 1px solid #C9D3E2; }
+.tl-list li:first-child { border-top: 0; }
+
+.roster { border: 0; border-radius: 0; background: transparent; overflow: visible; column-gap: 40px; }
+.roster .r { padding: 12px 0; border-top: 1px solid #C9D3E2; }
+.roster .r:nth-child(odd) { border-right: 0; }
+.roster .r:nth-child(-n+2) { border-top: 0; }
+
+.join { gap: 0 40px; }
+.jc { border: 0; border-radius: 0; padding: 0; background: transparent; }
+.fundp { border: 0; border-radius: 0; background: transparent; padding: 24px 0 0; margin-top: 28px; border-top: 1px solid #C9D3E2; }
+
+@media (max-width: 860px) {
+  .tl2 { gap: 28px; }
+  .roster .r:nth-child(2) { border-top: 1px solid #C9D3E2; }
+  .join { gap: 0; }
+  .jc { padding: 0; }
+  .jc + .jc { margin-top: 24px; padding-top: 24px; border-top: 1px solid #C9D3E2; }
+  .fundp { padding: 24px 0 0; margin-top: 24px; }
+}
 </style>
 
 <header class="header" id="header">
