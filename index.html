@@ -783,6 +783,18 @@ h1, h2, h3 { line-height: 1.28; }
   .jc + .jc { margin-top: 24px; padding-top: 24px; border-top: 1px solid #C9D3E2; }
   .fundp { padding: 24px 0 0; margin-top: 24px; }
 }
+
+/* 한 일 / 할 일 구분 강화: 머리글 색·선·크기로 확실히 나눔 */
+.tl-h { font-size: 1.4rem; gap: 10px; }
+.tl-col.done .tl-h { color: var(--body); border-bottom: 3px solid #C9D3E2; }
+.tl-col.done .tl-ic { background: #C9D3E2; color: var(--ink); }
+.tl-col.next .tl-h { color: var(--accent); border-bottom: 3px solid var(--accent); }
+.tl-col.next .tl-ic { background: var(--accent); color: #FFFFFF; }
+.tl-ic { width: 32px; height: 32px; font-size: 1.05rem; font-weight: 700; }
+.tl-col.done .tl-list h4 { color: var(--body); }
+@media (max-width: 860px) {
+  .tl2 { gap: 40px; }
+}
 </style>
 
 <header class="header" id="header">
