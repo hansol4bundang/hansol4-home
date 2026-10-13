@@ -659,6 +659,15 @@ h1, h2, h3 { line-height: 1.28; }
 
 /* 글자색 단순화: 본문(--ink) · 보조(--body) · 강조(--accent) 세 가지만 */
 :root { --muted: #3D4757; --body: #3D4757; }
+
+/* 글자 크기 통일: 본문 설명 18px, 보조 글씨 16px */
+.hero .lead, .sec-head p, .pg-head p,
+.g-body p, #why .g-body p, .why-note,
+.tl-list p, .faq .a, .card p, .step p,
+.contact p, .phone p, .fund-info dd, .fund-warn, .band-cta p { font-size: 18px; }
+.pg .lb, .pg-src, .fund-info .ex, .phone .ph-note, .tl-list .d, .memo-ex li { font-size: 16px; }
+.pg .sb { font-size: 14px; }
+@media (max-width: 860px) { .pg .lb { font-size: 16px; } .pg .sb { font-size: 14px; } }
 </style>
 
 <header class="header" id="header">
