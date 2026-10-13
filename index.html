@@ -532,12 +532,72 @@ h2, h3 { font-weight: 700; }
 #why .g-body p { font-size: 1.2rem; line-height: 1.65; margin-top: 6px; }
 #why .sec-head p { font-size: 1.15rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* 재건축 진행 단계 표 */
+.progress { padding: 40px 0 8px; }
+.pg-head h2 { font-size: clamp(1.5rem, 3.6vw, 2.1rem); font-weight: 700; letter-spacing: -0.02em; }
+.pg-head h2 em { font-style: normal; color: var(--accent); }
+.pg-head p { margin-top: 8px; color: var(--body); font-size: 1.08rem; }
+.pg { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 0; }
+.pg li { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 4px; }
+.pg li::before { content: ""; position: absolute; top: 31px; left: -50%; width: 100%; height: 4px; background: #C9D3E2; z-index: 0; }
+.pg li:first-child::before { display: none; }
+.pg li.done + li::before, .pg li.done::before { background: var(--accent); }
+.pg .dot { position: relative; z-index: 1; width: 66px; height: 66px; border-radius: 50%; display: grid; place-items: center; background: #FFFFFF; border: 3px solid #C9D3E2; color: #7A869A; }
+.pg li.done .dot { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
+.pg li.now .dot { background: #05287A; border-color: #05287A; color: #FFFFFF; box-shadow: 0 0 0 6px rgba(5, 40, 122, 0.18); width: 74px; height: 74px; margin-top: -4px; }
+.pg .no { margin-top: 10px; font-size: 0.85rem; font-weight: 700; color: #7A869A; }
+.pg .lb { margin-top: 2px; font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--ink); }
+.pg li:not(.done):not(.now) .lb { color: #536075; font-weight: 500; }
+.pg li.done .no, .pg li.now .no { color: var(--accent); }
+.pg .here, .pg .ok { margin-top: 8px; font-size: 0.85rem; font-weight: 700; padding: 2px 10px; border-radius: 99px; white-space: nowrap; }
+.pg .here { background: #F5B800; color: #241800; }
+.pg .ok { background: #DCE3EE; color: #2A3548; }
+@media (max-width: 860px) {
+  .pg { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 24px; }
+  .pg li::before { display: none; }
+  .pg .dot { width: 58px; height: 58px; }
+  .pg li.now .dot { width: 64px; height: 64px; margin-top: -3px; }
+  .pg .lb { font-size: 0.95rem; }
+}
+@media (max-width: 760px) { .progress { padding: 28px 0 0; } }
+
+/* 모금 안내 */
+.fund { margin-top: 20px; border: 2px solid var(--accent); border-radius: 20px; padding: 28px 32px; background: #FFFFFF; }
+.fund h3 { font-size: 1.35rem; font-weight: 700; color: var(--accent); }
+.fund-info { margin: 14px 0 0; display: grid; gap: 0; }
+.fund-info > div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 4px 20px; padding: 12px 0; border-top: 1px solid var(--line); }
+.fund-info > div:first-child { border-top: 0; }
+.fund-info dt { font-weight: 700; color: var(--body); }
+.fund-info dd { margin: 0; font-size: 1.1rem; overflow-wrap: anywhere; }
+.fund-info .acct { font-weight: 700; font-size: 1.25rem; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; }
+.fund-info .memo { background: var(--warn-soft); margin: 4px -14px 0; padding: 14px; border-radius: 12px; border-top: 0; }
+.fund-info .req { display: inline-block; margin-left: 4px; font-size: 0.8rem; padding: 0 8px; border-radius: 99px; background: #C0392B; color: #FFFFFF; vertical-align: 2px; }
+.fund-info .ex { color: var(--body); font-size: 1rem; }
+.copy { margin-left: 6px; font: inherit; font-size: 0.9rem; font-weight: 700; padding: 3px 12px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent-soft); color: var(--accent); cursor: pointer; vertical-align: 2px; }
+.fund-warn { margin-top: 14px; color: #8A2A1E; font-size: 1rem; }
+
+/* 대표 번호 */
+.phone { margin-top: 20px; border-radius: 20px; padding: 26px 32px; background: var(--band); display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; }
+.phone .ph-txt { flex: 1 1 320px; min-width: 0; }
+.phone h3 { font-size: 1.3rem; font-weight: 700; }
+.phone p { margin-top: 6px; color: var(--body); }
+.phone .ph-note { font-size: 0.97rem; color: #8A2A1E; font-weight: 500; }
+.ph-btn { background: #05287A; color: #FFFFFF; font-variant-numeric: tabular-nums; }
+.ph-empty { color: var(--body); }
+@media (max-width: 760px) {
+  .fund, .phone { padding: 22px 18px; border-radius: 16px; }
+  .fund-info > div { grid-template-columns: 1fr; gap: 2px; }
+  .fund-info .memo { margin: 4px -8px 0; padding: 12px 8px; }
+  .ph-btn { width: 100%; padding-block: 16px; }
+}
 </style>
 
 <header class="header" id="header">
   <div class="wrap bar">
     <a class="brand" href="#top">한솔마을 <span>4단지</span></a>
     <nav class="nav" id="nav" aria-label="주요 메뉴">
+      <a href="#progress">진행 단계</a>
       <a href="#status">지금 상황</a>
       <a href="#why">출범 이유</a>
       <a href="#timeline">진행 순서</a>
@@ -559,7 +619,7 @@ h2, h3 { font-weight: 700; }
       <div class="hero-fade" aria-hidden="true"></div>
       <div class="hero-inner">
         <div class="hero-copy">
-      <h1><span class="h1-top">한솔마을 4단지 재건축</span>선도지구 3기에<br><em>도전합니다</em></h1>
+      <h1><span class="h1-top">한솔마을 4단지 재건축</span>특별정비구역 3차에<br><em>도전합니다</em></h1>
       <p class="lead">진행 상황과 예비 주민대표단 소식을 누구나 볼 수 있습니다.</p>
         </div>
       </div>
@@ -567,12 +627,33 @@ h2, h3 { font-weight: 700; }
       <div class="stats">
         <div class="stat"><div class="k">우리 단지</div><div class="v">1,651<small>세대</small></div></div>
         <div class="stat"><div class="k">선도지구 2기 주민동의</div><div class="v">75%<small>이상</small></div><div class="n">2기 접수 때 받은 동의서 기준</div></div>
-        <div class="stat"><div class="k">우리의 목표</div><div class="v t">선도지구 3기 도전</div><div class="n">주민대표단 준비 중</div></div>
+        <div class="stat"><div class="k">우리의 목표</div><div class="v t">특별정비구역 3차 도전</div><div class="n">주민대표단 준비 중</div></div>
       </div>
     </div>
       <span class="hero-note">※ 이해를 돕기 위한 예시 이미지입니다. 실제 설계안이 아닙니다.</span>
     </div>
   </section>
+
+  <section class="progress" id="progress" aria-label="재건축 진행 단계">
+    <div class="wrap">
+      <div class="pg-head">
+        <h2>재건축, 지금 <em>어디까지</em> 왔을까요?</h2>
+        <p>지금은 <b>주민대표단 구성</b> 단계입니다. 이 단계가 끝나야 다음 단계로 갈 수 있습니다.</p>
+      </div>
+      <ol class="pg">
+        <li class="done"><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 14h6v6h-6z"/><path d="M14 4h6v6h-6" stroke-dasharray="2 2"/><path d="M7 10v4h7"/></svg></span><span class="no">시작</span><span class="lb">4단지<br>구역 분리</span><span class="ok">완료</span></li>
+        <li class="now" aria-current="step"><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/></svg></span><span class="no">1단계</span><span class="lb">주민대표단<br>구성</span><span class="here">지금 여기</span></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span class="no">2단계</span><span class="lb">특별정비구역<br>지정 신청</span></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></span><span class="no">3단계</span><span class="lb">특별정비구역<br>지정</span></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><span class="no">4단계</span><span class="lb">사업시행자<br>지정</span></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 13l2 2 4-4"/></svg></span><span class="no">5단계</span><span class="lb">사업시행계획<br>인가</span></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12"/><path d="M6 7l-3 6a3 3 0 0 0 6 0zM18 7l-3 6a3 3 0 0 0 6 0z"/></svg></span><span class="no">6단계</span><span class="lb">관리처분계획<br>인가</span></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M2 21h20"/></svg></span><span class="no">7단계</span><span class="lb">이주·착공</span></li>
+        <li><span class="dot"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><span class="no">8단계</span><span class="lb">준공·입주</span></li>
+      </ol>
+    </div>
+  </section>
+
 
   <section class="sec tint" id="status">
     <div class="wrap">
@@ -592,11 +673,11 @@ h2, h3 { font-weight: 700; }
         </div>
         <div class="g-row hi">
           <div class="g-label">우리의 목표</div>
-          <div class="g-body"><h3>선도지구 3기 도전</h3><p>선도지구는 재건축을 다른 곳보다 먼저 시작하도록 정해 주는 곳입니다. 우리 단지는 3기에 도전합니다. 이를 위해 주민대표단을 정식으로 만들 준비를 하고 있습니다.</p></div>
+          <div class="g-body"><h3>특별정비구역 3차 도전</h3><p>특별정비구역은 노후계획도시특별법에 따라 재건축을 할 수 있도록 정해 주는 구역입니다. 우리 단지는 3차 지정에 도전합니다. 이를 위해 먼저 주민대표단을 정식으로 구성해야 합니다.</p></div>
         </div>
         <div class="g-row">
           <div class="g-label">지난 동의</div>
-          <div class="g-body"><h3>선도지구 2기 접수 때 75% 이상 동의</h3><p>선도지구 2기를 접수할 때 아파트 주인분들 가운데 75% 이상이 동의서를 내 주셨습니다. 이번 3기 도전에서는 <b>주민대표단 출범 동의서</b>를 새로 받습니다.</p></div>
+          <div class="g-body"><h3>선도지구 2기 접수 때 75% 이상 동의</h3><p>선도지구 2기를 접수할 때 아파트 주인분들 가운데 75% 이상이 동의서를 내 주셨습니다. 이번 특별정비구역 3차 도전에서는 <b>주민대표단 출범 동의서</b>를 새로 받습니다.</p></div>
         </div>
       </div>
     </div>
@@ -607,27 +688,31 @@ h2, h3 { font-weight: 700; }
       <div class="sec-head">
         <div class="tagline">출범 이유</div>
         <h2>주민대표단이 꼭 필요한 이유</h2>
-        <p>1,651세대의 뜻을 모으려면, 주민을 대신해 책임지고 일할 모임이 있어야 합니다.</p>
+        <p>노후계획도시특별법에 따라 <b>주민대표단이 구성되어야 다음 단계로 갈 수 있습니다.</b> 주민대표단이 없으면 재건축 절차를 진행할 수 없습니다.</p>
       </div>
       <div class="group">
+        <div class="g-row hi">
+          <div class="g-label">하나. 법에서 정한 첫 단계</div>
+          <div class="g-body"><h3>주민대표단이 있어야 다음 단계로 갑니다</h3><p>노후계획도시특별법은 재건축을 진행하려면 주민대표단을 먼저 구성하도록 정하고 있습니다. 주민대표단이 선정되어야 특별정비구역 지정 신청 등 다음 단계를 진행할 수 있습니다.</p></div>
+        </div>
         <div class="g-row">
-          <div class="g-label">하나. 뜻 모으기</div>
+          <div class="g-label">둘. 뜻 모으기</div>
           <div class="g-body"><h3>흩어진 의견을 한 목소리로</h3><p>의견이 흩어지면 힘이 약해집니다. 주민의 뜻을 모아 한 목소리로 전달합니다.</p></div>
         </div>
         <div class="g-row">
-          <div class="g-label">둘. 선도지구 준비</div>
+          <div class="g-label">셋. 특별정비구역 준비</div>
           <div class="g-body"><h3>준비된 모습으로 도전</h3><p>동의를 모으고 서류를 챙길 책임 있는 모임이 필요합니다.</p></div>
         </div>
         <div class="g-row">
-          <div class="g-label">셋. 믿을 수 있게</div>
+          <div class="g-label">넷. 믿을 수 있게</div>
           <div class="g-body"><h3>모두에게 공개</h3><p>회의 내용과 쓴 돈을 알리고, 여러 사람이 함께 살핍니다.</p></div>
         </div>
         <div class="g-row">
-          <div class="g-label">넷. 주민 편에서</div>
+          <div class="g-label">다섯. 주민 편에서</div>
           <div class="g-body"><h3>전문가·업체를 주민 입장에서</h3><p>여러 곳을 비교해 살펴보고 주민께 설명드립니다.</p></div>
         </div>
         <div class="g-row">
-          <div class="g-label">다섯. 큰 결정 준비</div>
+          <div class="g-label">여섯. 큰 결정 준비</div>
           <div class="g-body"><h3>조합이냐 신탁이냐, 주민이 고르도록</h3><p>장단점을 쉽게 정리해 알리고, 최종 결정은 주민 투표로 합니다.</p></div>
         </div>
       </div>
@@ -645,20 +730,20 @@ h2, h3 { font-weight: 700; }
         <div class="step done">
           <span class="chip">끝났습니다</span>
           <div class="d">2026년 5월</div>
-          <h3>4단지만 따로 재건축하는 계획 승인</h3>
-          <p>성남시 도시계획위원회가 우리 단지의 계획을 승인했습니다.</p>
+          <h3>4·5·6단지에서 4단지 구역 분리</h3>
+          <p>4·5·6단지를 함께 묶지 않고 4단지만 따로 재건축하도록 구역 분리를 진행했고, 성남시 도시계획위원회가 이를 승인했습니다.</p>
         </div>
         <div class="step next">
           <span class="chip">하고 있습니다</span>
-          <div class="d">다음 순서</div>
-          <h3>계획 변경 발표와 주인분 명단 받기</h3>
-          <p>성남시가 계획을 고쳐서 공식으로 알리면, 아파트 주인분 명단을 받아 옵니다. 정확한 날짜는 카페 공지와 설명회에서 알려드립니다.</p>
+          <div class="d">지금</div>
+          <h3>예비 주민대표단 활동, 주민설명회 준비</h3>
+          <p>예비 주민대표단이 일을 나눠 맡고, 10월 17일(토) 주민설명회를 준비하고 있습니다.</p>
         </div>
         <div class="step">
           <span class="chip">앞으로 할 일</span>
           <div class="d">그다음</div>
-          <h3>주민대표단 정식 시작, 진행 방법 정하기</h3>
-          <p>조합으로 할지 신탁으로 할지 같은 큰 일은 주민 여러분이 투표로 정합니다.</p>
+          <h3>주민대표단 동의서 받기, 진행 방법 정하기</h3>
+          <p>주민대표단 출범 동의서를 받아 주민대표단을 정식으로 구성합니다. 조합으로 할지 신탁으로 할지 같은 진행 방법은 주민 여러분이 투표로 정합니다.</p>
         </div>
       </div>
     </div>
@@ -720,7 +805,7 @@ h2, h3 { font-weight: 700; }
         <details><summary>예비 주민대표단이 무엇인가요?</summary><div class="a">정식 주민대표단이 만들어지기 전에, 재건축 일을 먼저 맡아 하는 주민 모임입니다. 위원장님을 중심으로 정책, 총무, 홍보, 회계 팀이 나누어 일합니다.</div></details>
         <details><summary>조합 방식과 신탁 방식 중 무엇으로 하나요?</summary><div class="a"><b>아직 정해지지 않았습니다.</b> 두 방법이 어떻게 다른지 쉽게 정리해서 설명회와 카페에 알려드립니다. 마지막 결정은 주민 투표로 합니다.</div></details>
         <details><summary>진행 소식은 어디서 보나요?</summary><div class="a">이 홈페이지와 네이버 카페 공지사항에서 볼 수 있습니다. 설명회에서도 알려드립니다.</div></details>
-        <details><summary>선도지구가 무엇인가요?</summary><div class="a">오래된 신도시를 새로 짓는 일을 다른 곳보다 먼저 시작하도록 정해 주는 곳입니다. 우리 단지는 3기에 뽑히도록 도전합니다.</div></details>
+        <details><summary>특별정비구역이 무엇인가요?</summary><div class="a">노후계획도시특별법에 따라 오래된 신도시 단지를 새로 지을 수 있도록 정해 주는 구역입니다. 성남시가 차례로 지정하며, 우리 단지는 3차 지정을 목표로 준비하고 있습니다.</div></details>
         <details><summary>주민대표단은 언제 정식으로 만들어지나요?</summary><div class="a">지금 예비 주민대표단을 꾸리며 준비하고 있습니다. 날짜와 구성원은 정해지면 이 페이지와 카페 공지에 올립니다.</div></details>
       </div>
     </div>
@@ -731,10 +816,32 @@ h2, h3 { font-weight: 700; }
       <div class="contact">
         <div class="txt">
           <h2>소식과 자료는 카페에서 보세요</h2>
-          <p>공지사항, 회의 일정, 설명회 자료가 네이버 카페에 올라옵니다. 궁금한 점은 오픈카카오톡으로 물어보세요.</p>
-          <p id="links-empty" hidden>카페와 오픈카카오톡 주소를 준비 중입니다.</p>
+          <p>공지사항, 회의 일정, 설명회 자료가 네이버 카페에 올라옵니다. <b>모금에 참여한 세대</b>는 카페 가입이 승인된 뒤 모든 자료를 언제든 볼 수 있습니다.</p>
+          <p id="links-empty" hidden>카페 주소를 준비 중입니다.</p>
         </div>
         <div class="links" id="links"></div>
+      </div>
+
+      <div class="fund">
+        <h3>모금 참여 안내</h3>
+        <dl class="fund-info">
+          <div><dt>은행</dt><dd>국민은행</dd></div>
+          <div><dt>계좌번호</dt><dd><span class="acct" id="acct">474501-01-160608</span> <button class="copy" type="button" data-copy="47450101160608">복사</button></dd></div>
+          <div><dt>예금주</dt><dd>한솔마을4단지 재건축추진준비위원회</dd></div>
+          <div><dt>금액</dt><dd><b>300,000원</b></dd></div>
+          <div class="memo"><dt>받는 분 통장 메모 <span class="req">필수</span></dt><dd><b>동·호수 숫자 7자리</b><br><span class="ex">예) <b>4170103</b>, <b>4141704</b></span></dd></div>
+        </dl>
+        <p class="fund-warn">메모를 양식대로 적지 않으면 어느 세대가 냈는지 확인할 수 없어 <b>카페 가입이 되지 않습니다.</b></p>
+      </div>
+
+      <div class="phone">
+        <div class="ph-txt">
+          <h3>소유주 단체 카카오톡방 안내</h3>
+          <p>소유주분은 대표 번호로 <b>문자</b>를 보내 주시면 <b>카카오톡 방으로 초대</b>해 드립니다.</p>
+          <p class="ph-note">※ 문자만 받습니다. 전화는 받지 않습니다.</p>
+        </div>
+        <a class="btn ph-btn" id="phone-btn" href="#" hidden></a>
+        <p class="ph-empty" id="phone-empty">대표 번호를 준비 중입니다.</p>
       </div>
     </div>
   </section>
@@ -765,15 +872,14 @@ h2, h3 { font-weight: 700; }
 
 <script>
 (function () {
-  // 카페/오픈카톡 주소를 입력하면 버튼이 자동으로 나타납니다.
+  // 카페 주소·대표 번호를 입력하면 버튼이 자동으로 나타납니다.
   var ONLINE_URL = ""; // 온라인 설명회 접속 주소(줌/유튜브 등)를 여기에 넣으세요
-  var CAFE_URL = "https://cafe.naver.com/";
-  var KAKAO_URL = "https://open.kakao.com/";
+  var CAFE_URL = "https://cafe.naver.com/hansol4rebuild";
+  var PHONE = "010-5926-4459"; // 대표 번호 (문자 전용)
 
   var box = document.getElementById("links");
   var made = 0;
   var ICON_CAFE = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V9z"/><path d="M16 11h2a2 2 0 0 1 0 4h-2"/><path d="M8 3v3M12 3v3"/></svg>';
-  var ICON_CHAT = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.4 2 10.6c0 2.7 1.8 5.1 4.6 6.4l-1 3.6a.4.4 0 0 0 .6.4l4.2-2.8c.5.1 1 .1 1.6.1 5.5 0 10-3.4 10-7.7S17.5 3 12 3z"/></svg>';
   function add(url, label, cls, icon) {
     if (!url) return;
     var a = document.createElement("a");
@@ -786,8 +892,24 @@ h2, h3 { font-weight: 700; }
     box.appendChild(a); made++;
   }
   add(CAFE_URL, "네이버 카페 바로가기", "naver", ICON_CAFE);
-  add(KAKAO_URL, "오픈카카오톡 참여", "kakao", ICON_CHAT);
   if (!made) document.getElementById("links-empty").hidden = false;
+
+  // 대표 번호
+  if (PHONE) {
+    var pb = document.getElementById("phone-btn");
+    pb.href = "sms:" + PHONE.replace(/[^0-9+]/g, "");
+    pb.textContent = "문자 보내기 " + PHONE;
+    pb.hidden = false;
+    document.getElementById("phone-empty").hidden = true;
+  }
+
+  // 계좌번호 복사
+  document.querySelectorAll(".copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var done = function () { b.textContent = "복사됨"; setTimeout(function () { b.textContent = "복사"; }, 1500); };
+      try { navigator.clipboard.writeText(b.getAttribute("data-copy")).then(done, function () {}); } catch (e) {}
+    });
+  });
 
   // 설명회 D-day (한국 시간 기준)
   try {
