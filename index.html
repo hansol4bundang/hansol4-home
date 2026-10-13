@@ -591,6 +591,27 @@ h2, h3 { font-weight: 700; }
   .fund-info .memo { margin: 4px -8px 0; padding: 12px 8px; }
   .ph-btn { width: 100%; padding-block: 16px; }
 }
+
+/* 진행 순서: 지금까지 한 일 / 앞으로 할 일 두 섹션 */
+.tl2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.tl-col { border: 1px solid #AEBBD0; border-radius: 18px; overflow: hidden; background: #FFFFFF; }
+.tl-h { display: flex; align-items: center; gap: 10px; margin: 0; padding: 16px 24px; font-size: 1.25rem; font-weight: 700; }
+.tl-ic { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-size: 1rem; }
+.tl-col.done .tl-h { background: #DCE3EE; color: #2A3548; }
+.tl-col.done .tl-ic { background: #2A3548; color: #FFFFFF; }
+.tl-col.next .tl-h { background: #05287A; color: #FFFFFF; }
+.tl-col.next .tl-ic { background: #F5B800; color: #241800; }
+.tl-list { list-style: none; margin: 0; padding: 0 24px; }
+.tl-list li { padding: 20px 0; border-top: 1px solid var(--line); }
+.tl-list li:first-child { border-top: 0; }
+.tl-list .d { font-weight: 700; color: var(--body); font-size: 1.02rem; }
+.tl-list h4 { margin: 2px 0 0; font-size: 1.2rem; font-weight: 700; }
+.tl-list p { margin-top: 6px; color: var(--body); font-size: 1rem; line-height: 1.7; }
+@media (max-width: 760px) {
+  .tl2 { grid-template-columns: 1fr; gap: 16px; }
+  .tl-h { padding: 14px 18px; }
+  .tl-list { padding: 0 18px; }
+}
 </style>
 
 <header class="header" id="header">
@@ -727,40 +748,32 @@ h2, h3 { font-weight: 700; }
         <div class="tagline">진행 순서</div>
         <h2>지금까지 한 일, 앞으로 할 일</h2>
       </div>
-      <div class="steps">
-        <div class="step done">
-          <span class="chip">지금까지 한 일</span>
-          <div class="d">2026년 5월</div>
-          <h3>4·5·6단지에서 4단지 구역 분리</h3>
-          <p>4·5·6단지를 함께 묶지 않고 4단지만 따로 재건축하도록 구역 분리를 진행했고, 성남시 도시계획위원회가 이를 승인했습니다.</p>
+      <div class="tl2">
+        <div class="tl-col done">
+          <h3 class="tl-h"><span class="tl-ic" aria-hidden="true">✓</span>지금까지 한 일</h3>
+          <ul class="tl-list">
+            <li>
+              <div class="d">2026년 5월</div>
+              <h4>4·5·6단지에서 4단지 구역 분리</h4>
+              <p>4·5·6단지를 함께 묶지 않고 4단지만 따로 재건축하도록 구역 분리를 진행했고, 성남시 도시계획위원회가 이를 승인했습니다.</p>
+            </li>
+          </ul>
         </div>
-        <div class="step">
-          <span class="chip">앞으로 할 일</span>
-          <div class="d">2026년 10월 17일(토)~</div>
-          <h3>주민설명회, 주민대표단 동의서 받기</h3>
-          <p>주민설명회에서 주민대표단 출범 동의서를 받기 시작합니다. 동의서가 모이면 주민대표단을 정식으로 구성합니다.</p>
+        <div class="tl-col next">
+          <h3 class="tl-h"><span class="tl-ic" aria-hidden="true">→</span>앞으로 할 일</h3>
+          <ul class="tl-list">
+            <li>
+              <div class="d">2026년 10월 17일(토)~</div>
+              <h4>주민설명회, 주민대표단 동의서 받기</h4>
+              <p>주민설명회에서 주민대표단 출범 동의서를 받기 시작합니다. 동의서가 모이면 주민대표단을 정식으로 구성합니다.</p>
+            </li>
+            <li>
+              <div class="d">그다음</div>
+              <h4>진행 방법 정하기</h4>
+              <p>조합으로 할지 신탁으로 할지 같은 진행 방법은 주민 여러분이 투표로 정합니다.</p>
+            </li>
+          </ul>
         </div>
-        <div class="step">
-          <span class="chip">앞으로 할 일</span>
-          <div class="d">그다음</div>
-          <h3>진행 방법 정하기</h3>
-          <p>조합으로 할지 신탁으로 할지 같은 진행 방법은 주민 여러분이 투표로 정합니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec tint" id="plans">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="tagline">위치도 · 배치도 · 조감도<span class="tag">나중에 공개</span></div>
-        <h2>그림과 지도는 정해지면 보여드립니다</h2>
-        <p>새 단지가 어디에, 어떤 모양으로 지어지는지 보여 드리는 그림입니다. 정해지면 이곳에 올립니다.</p>
-      </div>
-      <div class="plans">
-        <div class="plan"><strong>위치도</strong><span>단지가 있는 곳을 보여주는 지도</span><span>나중에 공개</span></div>
-        <div class="plan"><strong>배치도</strong><span>건물이 놓이는 모양을 보여주는 그림</span><span>나중에 공개</span></div>
-        <div class="plan"><strong>조감도</strong><span>완성된 모습을 위에서 본 그림</span><span>나중에 공개</span></div>
       </div>
     </div>
   </section>
