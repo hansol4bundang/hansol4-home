@@ -737,6 +737,17 @@ h1, h2, h3 { line-height: 1.28; }
 .btn.naver, .jc .links .btn.naver { background: #02A44A; color: #FFFFFF; }
 .btn.naver svg { color: #FFFFFF; stroke: #FFFFFF; }
 .btn.naver span, .jc .links .btn.naver span { color: #FFFFFF; }
+
+/* 진행 단계: 제목·현재 단계 문구를 표 상자 안으로 */
+.progress > .wrap { width: calc(100% - 32px); max-width: 1120px; margin-inline: auto; padding-inline: 0; }
+.pg-box { margin-top: 0; background: #FFFFFF; border: 1px solid #C9D3E2; border-radius: 18px; padding: 22px 24px 16px; }
+.pg-box .pg { margin: 18px 0 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.pg-box .pg-head { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.pg-box .pg-src { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); }
+@media (max-width: 860px) {
+  .pg-box { padding: 18px 16px 12px; border-radius: 16px; }
+  .pg-box .pg { margin-top: 8px; }
+}
 </style>
 
 <header class="header" id="header">
@@ -775,6 +786,7 @@ h1, h2, h3 { line-height: 1.28; }
 
   <section class="progress" id="progress" aria-label="재건축 진행 단계">
     <div class="wrap">
+      <div class="pg-box">
       <div class="pg-head">
         <h2>재건축 진행 단계</h2>
         <p>지금은 <b>주민대표단 구성</b> 단계입니다.</p>
@@ -793,6 +805,7 @@ h1, h2, h3 { line-height: 1.28; }
         <li><span class="dot">11</span><span class="tx"><span class="lb">준공·입주</span></span></li>
       </ol>
       <p class="pg-src">※ 성남시 분당 특별정비구역 지정 계획과 노후계획도시특별법 기준입니다.</p>
+      </div>
     </div>
   </section>
 
