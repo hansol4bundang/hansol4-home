@@ -79,7 +79,7 @@ a { color: var(--accent); }
 .sec-head .tagline { color: var(--accent); font-weight: 700; font-size: 0.97rem; }
 .sec-head h2 { font-size: clamp(1.7rem, 4.8vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; margin-top: 8px; }
 .sec-head p { margin-top: 14px; color: var(--muted); }
-.tag { display: inline-block; font-size: 0.85rem; font-weight: 700; color: var(--warn); background: var(--warn-soft); padding: 2px 12px; border-radius: 99px; vertical-align: 4px; margin-left: 8px; }
+.tag { display: inline-block; font-size: 0.85rem; font-weight: 700; color: var(--ink); background: var(--warn-soft); padding: 2px 12px; border-radius: 99px; vertical-align: 4px; margin-left: 8px; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
 .card { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 26px; min-width: 0; }
@@ -93,7 +93,7 @@ a { color: var(--accent); }
 .step { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 26px; min-width: 0; }
 .step .chip { display: inline-block; font-size: 0.85rem; font-weight: 700; padding: 2px 12px; border-radius: 99px; color: var(--muted); background: var(--band); }
 .step.done .chip { color: var(--accent-ink); background: var(--accent); }
-.step.next .chip { color: var(--warn); background: var(--warn-soft); }
+.step.next .chip { color: var(--ink); background: var(--warn-soft); }
 .step .d { margin-top: 14px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--muted); }
 .step h3 { font-size: 1.2rem; font-weight: 700; margin-top: 2px; }
 .step p { margin-top: 8px; color: var(--muted); font-size: 0.97rem; line-height: 1.7; }
@@ -177,8 +177,8 @@ footer .fnav a:hover { color: var(--accent); text-decoration: underline; }
 /* 외부 서비스 버튼: 네이버 카페 초록, 카카오 노랑 */
 .btn.brand { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
 .btn.brand svg { flex: none; }
-.btn.naver { background: #03C75A; color: #052E16; }
-.btn.kakao { background: #FEE500; color: #191919; }
+.btn.naver { background: #03C75A; color: var(--ink); }
+.btn.kakao { background: #FEE500; color: var(--ink); }
 
 /* 가독성 보강 */
 html { -webkit-text-size-adjust: 100%; }
@@ -486,14 +486,14 @@ footer .wrap { padding-inline: 0; }
 /* 상태 표시 글자: 배경과 확실히 구분되는 진한 색 */
 .step .chip { background: #3F4A5C; color: #FFFFFF; font-size: 1.05rem; font-weight: 700; padding: 4px 14px; }
 .step.done .chip { background: var(--accent); color: #FFFFFF; }
-.step.next .chip { background: #F5B800; color: #241800; }
-.tag { background: #F5B800; color: #241800; font-weight: 700; }
+.step.next .chip { background: #F5B800; color: var(--ink); }
+.tag { background: #F5B800; color: var(--ink); font-weight: 700; }
 .step .chip { background: #3F4A5C; color: #FFFFFF; }
-.step.done .chip { background: #DCE3EE; color: #2A3548; }
+.step.done .chip { background: #DCE3EE; color: var(--ink); }
 .step.next .chip { background: var(--accent); color: #FFFFFF; }
 .step:not(.done):not(.next) .chip { background: #E8590C; color: #FFFFFF; font-size: 1.2rem; padding: 6px 18px; box-shadow: 0 3px 10px rgba(232,89,12,.35); }
 .band-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch; }
-.band-cta .btn.live { background: #F5B800; color: #241800; font-weight: 700; font-size: 1.15rem; display: inline-flex; align-items: center; gap: 10px; }
+.band-cta .btn.live { background: #F5B800; color: var(--ink); font-weight: 700; font-size: 1.15rem; display: inline-flex; align-items: center; gap: 10px; }
 @media (max-width: 640px) { .band-btns { width: 100%; flex-direction: column; } .band-btns .btn { width: 100%; justify-content: center; } }
 .band-cta .when { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .band-cta .when .dday { margin-top: 0; font-size: 1.05rem; }
@@ -536,13 +536,13 @@ h2, h3 { font-weight: 700; }
 .pg li::before { content: ""; position: absolute; top: 23px; left: -50%; width: 100%; height: 2px; background: #D5DCE7; }
 .pg li:first-child::before { display: none; }
 .pg li.done + li::before { background: var(--accent); }
-.pg .dot { position: relative; z-index: 1; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #FFFFFF; border: 2px solid #D5DCE7; color: #8A95A8; }
+.pg .dot { position: relative; z-index: 1; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #FFFFFF; border: 2px solid #D5DCE7; color: var(--body); }
 .pg li.done .dot { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
-.pg li.now .dot { background: #F5B800; border-color: #F5B800; color: #241800; box-shadow: 0 0 0 5px rgba(245, 184, 0, 0.25); }
-.pg .lb { margin-top: 10px; font-size: 0.95rem; line-height: 1.35; color: #6B7689; word-break: keep-all; }
+.pg li.now .dot { background: #F5B800; border-color: #F5B800; color: var(--ink); box-shadow: 0 0 0 5px rgba(245, 184, 0, 0.25); }
+.pg .lb { margin-top: 10px; font-size: 0.95rem; line-height: 1.35; color: var(--body); word-break: keep-all; }
 .pg li.done .lb { color: var(--ink); }
 .pg li.now .lb { color: var(--ink); font-weight: 700; }
-.pg .here { margin-top: 6px; font-size: 0.8rem; font-weight: 700; padding: 1px 10px; border-radius: 99px; background: #241800; color: #FFFFFF; white-space: nowrap; }
+.pg .here { margin-top: 6px; font-size: 0.8rem; font-weight: 700; padding: 1px 10px; border-radius: 99px; background: var(--ink); color: #FFFFFF; white-space: nowrap; }
 /* 휴대폰·태블릿: 세로 목록 */
 @media (max-width: 860px) {
   .pg { grid-template-columns: 1fr; padding: 12px 18px; }
@@ -570,14 +570,14 @@ h2, h3 { font-weight: 700; }
 .fund-info .req { display: inline-block; margin-left: 4px; font-size: 0.8rem; padding: 0 8px; border-radius: 99px; background: #C0392B; color: #FFFFFF; vertical-align: 2px; }
 .fund-info .ex { color: var(--body); font-size: 1rem; }
 .copy { margin-left: 6px; font: inherit; font-size: 0.9rem; font-weight: 700; padding: 3px 12px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent-soft); color: var(--accent); cursor: pointer; vertical-align: 2px; }
-.fund-warn { margin-top: 14px; color: #8A2A1E; font-size: 1rem; }
+.fund-warn { margin-top: 14px; color: var(--ink); font-size: 1rem; }
 
 /* 대표 번호 */
 .phone { margin-top: 20px; border-radius: 20px; padding: 26px 32px; background: var(--band); display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; }
 .phone .ph-txt { flex: 1 1 320px; min-width: 0; }
 .phone h3 { font-size: 1.3rem; font-weight: 700; }
 .phone p { margin-top: 6px; color: var(--body); }
-.phone .ph-note { font-size: 0.97rem; color: #8A2A1E; font-weight: 500; }
+.phone .ph-note { font-size: 0.97rem; color: var(--ink); font-weight: 500; }
 .ph-btn { background: #05287A; color: #FFFFFF; font-variant-numeric: tabular-nums; }
 .ph-empty { color: var(--body); }
 @media (max-width: 760px) {
@@ -592,10 +592,10 @@ h2, h3 { font-weight: 700; }
 .tl-col { border: 1px solid #AEBBD0; border-radius: 18px; overflow: hidden; background: #FFFFFF; }
 .tl-h { display: flex; align-items: center; gap: 10px; margin: 0; padding: 16px 24px; font-size: 1.25rem; font-weight: 700; }
 .tl-ic { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-size: 1rem; }
-.tl-col.done .tl-h { background: #DCE3EE; color: #2A3548; }
+.tl-col.done .tl-h { background: #DCE3EE; color: var(--ink); }
 .tl-col.done .tl-ic { background: #2A3548; color: #FFFFFF; }
 .tl-col.next .tl-h { background: #05287A; color: #FFFFFF; }
-.tl-col.next .tl-ic { background: #F5B800; color: #241800; }
+.tl-col.next .tl-ic { background: #F5B800; color: var(--ink); }
 .tl-list { list-style: none; margin: 0; padding: 0 24px; }
 .tl-list li { padding: 20px 0; border-top: 1px solid var(--line); }
 .tl-list li:first-child { border-top: 0; }
@@ -614,9 +614,9 @@ h2, h3 { font-weight: 700; }
 
 /* 진행 단계: 보조 문구·출처 */
 .pg .tx { display: flex; flex-direction: column; align-items: center; }
-.pg .sb { font-size: 0.78rem; color: #8A95A8; line-height: 1.3; margin-top: 2px; }
+.pg .sb { font-size: 0.78rem; color: var(--body); line-height: 1.3; margin-top: 2px; }
 .pg li.now .sb { color: var(--accent); font-weight: 700; }
-.pg-src { margin-top: 10px; font-size: 0.88rem; color: #6B7689; line-height: 1.5; }
+.pg-src { margin-top: 10px; font-size: 0.88rem; color: var(--body); line-height: 1.5; }
 @media (min-width: 861px) { .pg .lb { font-size: 0.9rem; } }
 @media (max-width: 860px) {
   .pg .tx { flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 0 8px; }
@@ -646,6 +646,7 @@ h1, h2, h3 { line-height: 1.28; }
 .roster .rg { flex: 0 0 auto; min-width: 5.6em; white-space: nowrap; font-weight: 700; color: var(--accent); font-size: 1rem; }
 .roster .rn { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .roster .rn span { font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
+.roster .rn span.mb { font-weight: 500; font-size: 1.02rem; white-space: normal; }
 .roster .rn i { font-style: normal; font-weight: 500; font-size: 0.88rem; color: var(--body); margin-right: 6px; }
 #committee .sec-head { margin-bottom: 18px; padding-bottom: 14px; }
 @media (max-width: 760px) {
@@ -655,6 +656,9 @@ h1, h2, h3 { line-height: 1.28; }
   .roster .r { padding: 9px 14px; }
   .roster .rg { font-size: 0.95rem; }
 }
+
+/* 글자색 단순화: 본문(--ink) · 보조(--body) · 강조(--accent) 세 가지만 */
+:root { --muted: #3D4757; --body: #3D4757; }
 </style>
 
 <header class="header" id="header">
@@ -825,10 +829,10 @@ h1, h2, h3 { line-height: 1.28; }
       <div class="roster">
         <div class="r"><div class="rg">위원장·부위원장</div><div class="rn"><span><i>위원장</i>김길동</span><span><i>부위원장</i>이길동</span></div></div>
         <div class="r"><div class="rg">감사·고문</div><div class="rn"><span><i>감사</i>박길동</span><span><i>고문</i>최길동</span></div></div>
-        <div class="r"><div class="rg">정책팀</div><div class="rn"><span><i>팀장</i>정길동</span></div></div>
-        <div class="r"><div class="rg">총무팀</div><div class="rn"><span><i>팀장</i>조길동</span></div></div>
-        <div class="r"><div class="rg">홍보팀</div><div class="rn"><span><i>팀장</i>윤길동</span></div></div>
-        <div class="r"><div class="rg">회계팀</div><div class="rn"><span><i>팀장</i>장길동</span></div></div>
+        <div class="r"><div class="rg">정책팀</div><div class="rn"><span><i>팀장</i>정길동</span><span class="mb"><i>팀원</i>한길동, 서길동</span></div></div>
+        <div class="r"><div class="rg">총무팀</div><div class="rn"><span><i>팀장</i>조길동</span><span class="mb"><i>팀원</i>문길동, 배길동</span></div></div>
+        <div class="r"><div class="rg">홍보팀</div><div class="rn"><span><i>팀장</i>윤길동</span><span class="mb"><i>팀원</i>신길동, 권길동</span></div></div>
+        <div class="r"><div class="rg">회계팀</div><div class="rn"><span><i>팀장</i>장길동</span><span class="mb"><i>팀원</i>유길동, 노길동</span></div></div>
       </div>
     </div>
   </section>
