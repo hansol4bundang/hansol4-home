@@ -668,6 +668,35 @@ h1, h2, h3 { line-height: 1.28; }
 .pg .lb, .pg-src, .fund-info .ex, .phone .ph-note, .tl-list .d, .memo-ex li { font-size: 16px; }
 .pg .sb { font-size: 14px; }
 @media (max-width: 860px) { .pg .lb { font-size: 16px; } .pg .sb { font-size: 14px; } }
+
+/* 소식 받는 방법 (모금·카페 / 카카오톡) */
+.join { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 20px; align-items: start; }
+.jc { border: 1px solid #C9D3E2; border-radius: 18px; padding: 26px 28px; background: #FFFFFF; min-width: 0; }
+.jc-h { font-size: 1.35rem; font-weight: 700; color: var(--ink); }
+.jc-d { margin-top: 8px; color: var(--body); }
+.jc-steps { list-style: none; counter-reset: st; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.jc-steps li { counter-increment: st; display: flex; align-items: center; gap: 8px; background: var(--accent-soft); color: var(--ink); border-radius: 99px; padding: 6px 14px 6px 6px; font-size: 16px; font-weight: 500; }
+.jc-steps li::before { content: counter(st); display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #FFFFFF; font-weight: 700; font-size: 14px; flex: none; }
+.jc-box { margin-top: 18px; border-top: 2px solid var(--ink); padding-top: 4px; }
+.jc-box .fund-info { margin-top: 0; }
+.jc-box .fund-warn { margin-top: 12px; font-size: 16px; }
+.jc .links { margin-top: 18px; }
+.jc .ph-btn { margin-top: 18px; width: 100%; justify-content: center; }
+.jc-note { margin-top: 10px; font-size: 16px; color: var(--body); }
+@media (max-width: 860px) {
+  .join { grid-template-columns: 1fr; gap: 16px; }
+  .jc { padding: 20px 18px; border-radius: 16px; }
+  .jc-steps { flex-direction: column; align-items: stretch; }
+  .jc .links .btn { width: 100%; }
+}
+
+/* 모금 계좌 정보: 휴대폰에서도 항목명·내용 한 줄 */
+@media (max-width: 760px) {
+  .jc-box .fund-info > div { grid-template-columns: 5.2em minmax(0, 1fr); gap: 2px 10px; padding: 10px 0; align-items: baseline; }
+  .jc-box .fund-info > div.memo { grid-template-columns: 1fr; }
+  .jc-box .fund-info dt { font-size: 16px; }
+  .jc-box .fund-info .memo { margin: 6px 0 0; padding: 14px; }
+}
 </style>
 
 <header class="header" id="header">
@@ -877,18 +906,22 @@ h1, h2, h3 { line-height: 1.28; }
 
   <section class="sec" id="contact">
     <div class="wrap">
-      <div class="contact">
-        <div class="txt">
-          <h2>소식과 자료는 카페에서 보세요</h2>
-          <p>공지사항, 회의 일정, 설명회 자료가 네이버 카페에 올라옵니다.<br><b>모금에 참여한 세대</b>는 카페 가입이 승인된 뒤 모든 자료를 언제든 볼 수 있습니다.</p>
-          <p id="links-empty" hidden>카페 주소를 준비 중입니다.</p>
-        </div>
-        <div class="links" id="links"></div>
+      <div class="sec-head">
+        <div class="tagline">소식 받는 방법</div>
+        <h2>소유주분은 이렇게 함께해 주세요</h2>
       </div>
 
-      <div class="fund">
-        <h3>모금 참여 안내</h3>
-        <dl class="fund-info">
+      <div class="join">
+        <article class="jc">
+          <h3 class="jc-h">모금 참여하고, 카페에서 자료 보기</h3>
+          <p class="jc-d">공지사항, 회의 일정, 설명회 자료는 네이버 카페에 올라옵니다.<br><b>모금에 참여한 세대</b>만 카페 가입이 승인됩니다.</p>
+          <ol class="jc-steps">
+            <li><span>아래 계좌로 모금 참여</span></li>
+            <li><span>네이버 카페 가입 신청</span></li>
+            <li><span>승인 후 모든 자료 보기</span></li>
+          </ol>
+          <div class="jc-box">
+            <dl class="fund-info">
           <div><dt>은행</dt><dd>국민은행</dd></div>
           <div><dt>계좌번호</dt><dd><span class="acct" id="acct">474501-01-160608</span> <button class="copy" type="button" data-copy="47450101160608">복사</button></dd></div>
           <div><dt>예금주</dt><dd>한솔마을4단지 재건축추진준비위원회</dd></div>
@@ -900,17 +933,23 @@ h1, h2, h3 { line-height: 1.28; }
             </ul>
             <span class="ex">※ 호수가 3자리(예: 103호)이면 앞에 <b>0</b>을 붙여 4자리(0103)로 적어 주세요.</span></dd></div>
         </dl>
-        <p class="fund-warn">메모를 양식대로 적지 않으면 어느 세대가 냈는지 확인할 수 없어 <b>카페 가입이 되지 않습니다.</b></p>
-      </div>
+            <p class="fund-warn">※ 메모를 양식대로 적지 않으면 어느 세대가 냈는지 확인할 수 없어 <b>카페 가입이 되지 않습니다.</b></p>
+          </div>
+          <div class="links" id="links"></div>
+          <p id="links-empty" hidden>카페 주소를 준비 중입니다.</p>
+        </article>
 
-      <div class="phone">
-        <div class="ph-txt">
-          <h3>소유주 단체 카카오톡방 안내</h3>
-          <p>소유주분은 대표 번호로 <b>문자</b>를 보내 주시면 <b>카카오톡 방으로 초대</b>해 드립니다.</p>
-          <p class="ph-note">※ 문자만 받습니다.<br>전화는 받지 않습니다.</p>
-        </div>
-        <a class="btn ph-btn" id="phone-btn" href="#" hidden></a>
-        <p class="ph-empty" id="phone-empty">대표 번호를 준비 중입니다.</p>
+        <article class="jc">
+          <h3 class="jc-h">소유주 카카오톡 방 들어오기</h3>
+          <p class="jc-d">빠른 소식은 소유주 카카오톡 방에서 전해 드립니다.</p>
+          <ol class="jc-steps">
+            <li><span>대표 번호로 <b>문자</b> 보내기</span></li>
+            <li><span>카카오톡 방 초대 받기</span></li>
+          </ol>
+          <a class="btn ph-btn" id="phone-btn" href="#" hidden></a>
+          <p class="ph-empty" id="phone-empty">대표 번호를 준비 중입니다.</p>
+          <p class="jc-note">※ 문자만 받습니다. 전화는 받지 않습니다.</p>
+        </article>
       </div>
     </div>
   </section>
