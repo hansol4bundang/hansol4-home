@@ -812,6 +812,20 @@ h1, h2, h3 { line-height: 1.28; }
 .tl-list .d { line-height: 1.3; }
 .tl-list h4 { margin-top: 2px; line-height: 1.35; }
 .tl-list p { margin-top: 4px; line-height: 1.45; }
+
+/* 설명회 안내: 한 줄 소개 → 온라인 / 현장 두 갈래 */
+.band-cta .bc-lead { margin-top: 10px; font-size: 18px; }
+.bc-ways { margin: 16px 0 0; display: grid; gap: 0; border-top: 1px solid rgba(255, 255, 255, 0.3); }
+.bc-ways > div { display: grid; grid-template-columns: 5em minmax(0, 1fr); gap: 4px 14px; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.3); align-items: baseline; }
+.bc-ways dt { justify-self: start; font-size: 15px; font-weight: 700; padding: 2px 12px; border-radius: 99px; background: #FFFFFF; color: var(--accent); }
+.bc-ways dd { margin: 0; font-size: 18px; line-height: 1.5; }
+.bc-ways .bc-place { font-size: 1.15em; }
+.bc-ways ul { margin: 4px 0 0; padding-left: 1.1em; }
+.bc-ways li { margin-top: 2px; font-size: 17px; }
+
+/* 설명회 온라인 참여 버튼: 노랑 대신 흰 바탕 + 파란 글자 (파란 띠 위에서 가장 깔끔하게 눈에 띔) */
+.band-cta .btn.live { background: #FFFFFF; color: var(--accent); }
+.band-cta .btn.live svg { color: var(--accent); }
 </style>
 
 <header class="header" id="header">
@@ -997,7 +1011,15 @@ h1, h2, h3 { line-height: 1.28; }
       <div class="txt">
         <div class="when">2026년 10월 17일(토) <span class="dday" id="dday"></span></div>
         <h2>주민설명회에 오세요</h2>
-        <p>앞으로 진행 예정인 안건들에 관한 설명회입니다.<br>온라인으로 중계하며, 현장 참석은 <b>노인정</b>에서 진행합니다.<br>장소가 협소한 관계로 현장 참석은 <b>65세 이상 어르신</b>께 권장드립니다.<br>현장에 오시는 분들은 <b>신분증을 꼭 지참</b>해 주세요.</p>
+        <p class="bc-lead">앞으로 진행 예정인 안건들에 관한 설명회입니다.</p>
+        <dl class="bc-ways">
+          <div><dt>온라인</dt><dd>생중계로 집에서도 참여하실 수 있습니다.</dd></div>
+          <div><dt>현장</dt><dd><b class="bc-place">노인정</b>
+            <ul>
+              <li>장소가 협소해 <b>65세 이상 어르신</b>께 권장드립니다.</li>
+              <li><b>신분증을 꼭 지참</b>해 주세요.</li>
+            </ul></dd></div>
+        </dl>
       </div>
       <div class="band-btns">
         <a class="btn live" id="online-btn" href="#consent" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 6.5A2.5 2.5 0 0 1 6.5 4h7A2.5 2.5 0 0 1 16 6.5v2.3l4.2-2.4a.8.8 0 0 1 1.2.7v9.8a.8.8 0 0 1-1.2.7L16 15.2v2.3a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 4 17.500z"/></svg>설명회 온라인으로 참여하기</a>
