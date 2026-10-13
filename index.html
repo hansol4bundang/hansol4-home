@@ -637,6 +637,24 @@ h1, h2, h3 { line-height: 1.28; }
 /* 진행 단계: 아이콘 대신 번호 */
 .pg .dot { font-size: 1.15rem; font-weight: 800; font-variant-numeric: tabular-nums; }
 @media (max-width: 860px) { .pg .dot { font-size: 1.05rem; } }
+
+/* 주민대표단: 컴팩트 명단 */
+.roster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid #C9D3E2; border-radius: 14px; overflow: hidden; background: #FFFFFF; }
+.roster .r { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--line); min-width: 0; }
+.roster .r:nth-child(-n+2) { border-top: 0; }
+.roster .r:nth-child(odd) { border-right: 1px solid var(--line); }
+.roster .rg { flex: 0 0 auto; min-width: 5.6em; white-space: nowrap; font-weight: 700; color: var(--accent); font-size: 1rem; }
+.roster .rn { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.roster .rn span { font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
+.roster .rn i { font-style: normal; font-weight: 500; font-size: 0.88rem; color: var(--body); margin-right: 6px; }
+#committee .sec-head { margin-bottom: 18px; padding-bottom: 14px; }
+@media (max-width: 760px) {
+  .roster { grid-template-columns: 1fr; }
+  .roster .r:nth-child(2) { border-top: 1px solid var(--line); }
+  .roster .r:nth-child(odd) { border-right: 0; }
+  .roster .r { padding: 9px 14px; }
+  .roster .rg { font-size: 0.95rem; }
+}
 </style>
 
 <header class="header" id="header">
@@ -802,15 +820,15 @@ h1, h2, h3 { line-height: 1.28; }
       <div class="sec-head">
         <div class="tagline">주민대표단<span class="tag">예시 이름 표시 중</span></div>
         <h2>주민대표단을 소개합니다</h2>
-        <p>주민대표단은 주민 여러분을 대신해 재건축 일을 맡아 하는 모임입니다. 아직 정식으로 만들기 전이어서, 지금은 '예비' 모임으로 일하고 있습니다. 아래 이름은 예시이며, 실제 이름은 정해지면 올립니다.</p>
+        <p>지금은 '예비' 주민대표단으로 일하고 있습니다. 아래 이름은 예시이며, 정해지면 바꿔 올립니다.</p>
       </div>
-      <div class="org">
-        <div class="card top"><h3>위원장 · 부위원장</h3><p>모임 전체를 이끕니다.</p><div class="who"><div class="pr"><span class="role">위원장</span><span class="nm">김길동</span></div><div class="pr"><span class="role">부위원장</span><span class="nm">이길동</span></div></div></div>
-        <div class="card"><h3>감사 · 고문</h3><p>일이 잘 되고 있는지 살피고 조언합니다.</p><div class="who"><div class="pr"><span class="role">감사</span><span class="nm">박길동</span></div><div class="pr"><span class="role">고문</span><span class="nm">최길동</span></div></div></div>
-        <div class="card"><h3>정책팀</h3><p>어떻게 진행할지 방법을 살펴봅니다.</p><div class="who"><div class="pr"><span class="role">팀장</span><span class="nm">정길동</span></div></div></div>
-        <div class="card"><h3>총무팀</h3><p>회의를 준비하고 살림을 돕습니다.</p><div class="who"><div class="pr"><span class="role">팀장</span><span class="nm">조길동</span></div></div></div>
-        <div class="card"><h3>홍보팀</h3><p>안내 자료와 홈페이지, 카페 소식을 만듭니다.</p><div class="who"><div class="pr"><span class="role">팀장</span><span class="nm">윤길동</span></div></div></div>
-        <div class="card"><h3>회계팀</h3><p>모은 돈과 쓴 돈을 정리해 모두에게 알립니다.</p><div class="who"><div class="pr"><span class="role">팀장</span><span class="nm">장길동</span></div></div></div>
+      <div class="roster">
+        <div class="r"><div class="rg">위원장·부위원장</div><div class="rn"><span><i>위원장</i>김길동</span><span><i>부위원장</i>이길동</span></div></div>
+        <div class="r"><div class="rg">감사·고문</div><div class="rn"><span><i>감사</i>박길동</span><span><i>고문</i>최길동</span></div></div>
+        <div class="r"><div class="rg">정책팀</div><div class="rn"><span><i>팀장</i>정길동</span></div></div>
+        <div class="r"><div class="rg">총무팀</div><div class="rn"><span><i>팀장</i>조길동</span></div></div>
+        <div class="r"><div class="rg">홍보팀</div><div class="rn"><span><i>팀장</i>윤길동</span></div></div>
+        <div class="r"><div class="rg">회계팀</div><div class="rn"><span><i>팀장</i>장길동</span></div></div>
       </div>
     </div>
   </section>
