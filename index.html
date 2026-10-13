@@ -784,17 +784,7 @@ h1, h2, h3 { line-height: 1.28; }
   .fundp { padding: 24px 0 0; margin-top: 24px; }
 }
 
-/* 한 일 / 할 일 구분 강화: 머리글 색·선·크기로 확실히 나눔 */
-.tl-h { font-size: 1.4rem; gap: 10px; }
-.tl-col.done .tl-h { color: var(--body); border-bottom: 3px solid #C9D3E2; }
-.tl-col.done .tl-ic { background: #C9D3E2; color: var(--ink); }
-.tl-col.next .tl-h { color: var(--accent); border-bottom: 3px solid var(--accent); }
-.tl-col.next .tl-ic { background: var(--accent); color: #FFFFFF; }
-.tl-ic { width: 32px; height: 32px; font-size: 1.05rem; font-weight: 700; }
-.tl-col.done .tl-list h4 { color: var(--body); }
-@media (max-width: 860px) {
-  .tl2 { gap: 40px; }
-}
+
 
 /* 자주 묻는 질문: + / − 대신 아래 화살표(열면 위로 회전) */
 .faq summary::after, .faq details[open] summary::after {
@@ -804,6 +794,18 @@ h1, h2, h3 { line-height: 1.28; }
 }
 .faq details[open] summary::after { transform: translateY(-20%) rotate(-135deg); }
 @media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
+
+/* 한 일 / 할 일: 머리글은 알약 모양, 선은 모두 1px 하나로 통일 */
+.tl-h, .tl-col.done .tl-h, .tl-col.next .tl-h { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px 6px 8px; border: 0; border-radius: 99px; font-size: 1.1rem; font-weight: 700; }
+.tl-col.done .tl-h { background: #E6EAF1; color: var(--ink); }
+.tl-col.next .tl-h { background: var(--accent); color: #FFFFFF; }
+.tl-ic { width: 26px; height: 26px; font-size: 0.95rem; font-weight: 700; }
+.tl-col.done .tl-ic { background: var(--ink); color: #FFFFFF; }
+.tl-col.next .tl-ic { background: #FFFFFF; color: var(--accent); }
+.tl-list { margin-top: 6px; }
+.tl-list li { border-top: 1px solid #C9D3E2; }
+.tl-list li:first-child { border-top: 0; }
+@media (max-width: 860px) { .tl2 { gap: 32px; } }
 </style>
 
 <header class="header" id="header">
