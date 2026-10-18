@@ -1,3 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="한솔마을 4단지 재건축 진행 상황과 예비 주민대표단 소식">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E141F" media="(prefers-color-scheme: dark)">
+<script>
+  // 다크모드: 직접 고른 값이 있으면 그것을, 없으면 기기 설정을 따름 (화면 깜빡임 방지용으로 맨 앞에서 실행)
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (t !== "light" && t !== "dark") t = (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
 <title>주민대표단 소개</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -826,7 +844,69 @@ h1, h2, h3 { line-height: 1.28; }
 /* 설명회 온라인 참여 버튼: 노랑 대신 흰 바탕 + 파란 글자 (파란 띠 위에서 가장 깔끔하게 눈에 띔) */
 .band-cta .btn.live { background: #FFFFFF; color: var(--accent); }
 .band-cta .btn.live svg { color: var(--accent); }
+
+/* 다크모드 전환 버튼 */
+.theme-btn { display: inline-grid; place-items: center; width: 44px; height: 44px; flex: none; margin-left: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 10px; cursor: pointer; }
+.theme-btn svg { width: 22px; height: 22px; }
+.theme-btn .i-sun { display: none; }
+html[data-theme="dark"] .theme-btn .i-sun { display: block; }
+html[data-theme="dark"] .theme-btn .i-moon { display: none; }
+@media (max-width: 760px) { .theme-btn { margin-left: auto; } .theme-btn + .burger { margin-left: 8px; } }
+
+/* ===== 다크모드 ===== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #161E2C; --band: #1C2636; --ink: #E8EDF5; --muted: #B4BFCF; --body: #B4BFCF;
+  --line: #2E3A52; --accent: #8CB0F8; --accent-ink: #0E141F; --accent-soft: #1E2D4D;
+  --warn: #F5C451; --warn-soft: #2E2716;
+}
+html[data-theme="dark"] body { background: #0E141F; }
+html[data-theme="dark"] .header, html[data-theme="dark"] .header.open .nav { background: #121A27; }
+html[data-theme="dark"] .sec > .wrap { background: #161E2C; border-color: #2E3A52; box-shadow: none; }
+html[data-theme="dark"] .hero-banner { background: #0E141F; border-color: #2E3A52; }
+html[data-theme="dark"] .hero-bg { filter: brightness(0.85); }
+html[data-theme="dark"] .hero-fade { background: linear-gradient(90deg, #0E141F 0%, #0E141F 34%, rgba(14, 20, 31, 0.9) 40%, rgba(14, 20, 31, 0.55) 48%, rgba(14, 20, 31, 0) 58%); }
+@media (max-width: 1024px) { html[data-theme="dark"] .hero-fade { background: linear-gradient(180deg, rgba(14, 20, 31, 0) 70%, #0E141F 100%); } }
+
+/* 진행 단계 표 */
+html[data-theme="dark"] .pg-box { background: #161E2C; border-color: #2E3A52; }
+html[data-theme="dark"] .pg .dot { background: #161E2C; border-color: #3A4760; color: #B4BFCF; }
+html[data-theme="dark"] .pg li::before { background: #3A4760; }
+html[data-theme="dark"] .pg li.done .dot { background: #8CB0F8; border-color: #8CB0F8; color: #0E141F; }
+html[data-theme="dark"] .pg li.done + li::before { background: #8CB0F8; }
+html[data-theme="dark"] .pg li.now .dot { background: #F5B800; border-color: #F5B800; color: #241800; }
+html[data-theme="dark"] .pg .here { background: #F5B800; color: #241800; }
+
+/* 목록 구분선 */
+html[data-theme="dark"] .g-row, html[data-theme="dark"] .tl-list li, html[data-theme="dark"] .roster .r, html[data-theme="dark"] .fundp, html[data-theme="dark"] .jc + .jc, html[data-theme="dark"] .faq, html[data-theme="dark"] .faq details,
+html[data-theme="dark"] .fund-info > div, html[data-theme="dark"] .pg-box .pg-head, html[data-theme="dark"] .pg-box .pg-src { border-color: #2E3A52; }
+html[data-theme="dark"] .sec-head { border-bottom-color: #E8EDF5; }
+
+/* 한 일 / 할 일 알약 */
+html[data-theme="dark"] .tl-col.done .tl-h { background: #26324A; color: #E8EDF5; }
+html[data-theme="dark"] .tl-col.done .tl-ic { background: #E8EDF5; color: #0E141F; }
+html[data-theme="dark"] .tl-col.next .tl-h { background: #8CB0F8; color: #0E141F; }
+html[data-theme="dark"] .tl-col.next .tl-ic { background: #0E141F; color: #8CB0F8; }
+
+/* 설명회 띠 */
+html[data-theme="dark"] .band-cta .wrap { background: #1B3A80; box-shadow: none; }
+html[data-theme="dark"] .band-cta .dday, html[data-theme="dark"] .bc-ways dt { background: #FFFFFF; color: #1B3A80; }
+html[data-theme="dark"] .band-cta .btn.live { background: #FFFFFF; color: #1B3A80; }
+html[data-theme="dark"] .band-cta .btn.live svg { color: #1B3A80; }
+
+/* 연락처·모금 */
+html[data-theme="dark"] .memo2 { background: #2E2716; }
+html[data-theme="dark"] .memo-ex li { background: #161E2C; }
+html[data-theme="dark"] .copy { background: #1E2D4D; border-color: #8CB0F8; color: #8CB0F8; }
+html[data-theme="dark"] .ph-btn { background: #8CB0F8; color: #0E141F; }
+
+/* 기타 */
+html[data-theme="dark"] .burger { background: #161E2C; color: #E8EDF5; }
+html[data-theme="dark"] footer { background: #121A27; border-color: #2E3A52; }
+html[data-theme="dark"] .nav a.active, html[data-theme="dark"] .nav a:hover { background: #1E2D4D; }
 </style>
+</head>
+<body>
 
 <header class="header" id="header">
   <div class="wrap bar">
@@ -841,6 +921,10 @@ h1, h2, h3 { line-height: 1.28; }
       <a href="#contact">연락처</a>
     </nav>
     <a class="btn sm cta-top" href="#briefing">설명회 안내</a>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="어두운 화면으로 보기">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
     <button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -1205,3 +1289,24 @@ h1, h2, h3 { line-height: 1.28; }
 })();
 
 </script>
+<script>
+(function () {
+  // 다크모드 전환 버튼
+  var b = document.getElementById("theme-btn");
+  if (!b) return;
+  function sync() {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    b.setAttribute("aria-label", dark ? "밝은 화면으로 보기" : "어두운 화면으로 보기");
+    b.setAttribute("aria-pressed", dark ? "true" : "false");
+  }
+  b.addEventListener("click", function () {
+    var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    sync();
+  });
+  sync();
+})();
+</script>
+</body>
+</html>
