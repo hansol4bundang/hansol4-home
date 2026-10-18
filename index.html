@@ -19,7 +19,7 @@
 <title>주민대표단 소개</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap">
 <style>
 /* Layout: 서비스 소개형 웹사이트. 상단 고정 메뉴, 큰 문구의 히어로와 수치, 전체 폭 섹션이 위에서 아래로 이어지고 파란 안내 띠와 푸터로 마무리. 항상 흰 배경. */
 :root {
@@ -904,6 +904,22 @@ html[data-theme="dark"] .ph-btn { background: #9DB7E8; color: #121212; }
 html[data-theme="dark"] .burger { background: #1C1C1C; color: #EDEDED; }
 html[data-theme="dark"] footer { background: #171717; border-color: #333333; }
 html[data-theme="dark"] .nav a.active, html[data-theme="dark"] .nav a:hover { background: #262B33; }
+
+/* 굵기 정리: 큰 제목만 700, 소제목 600, 라벨·보조 500, 본문 400 */
+.g-body h3, .tl-list h4, .jc-h, .fundp .jc-h, .memo2 .m-h, .pg-head h2, .tl-h,
+.tl-col.done .tl-h, .tl-col.next .tl-h, .faq summary { font-weight: 600; }
+.g-label, .sec-head .tagline, .roster .rg, .fund-info dt, .tl-list .d, .band-cta .when,
+.jc-flow, .pg li.now .lb, .pg li.now .sb, .pg .here, .bc-ways dt, .copy, .nav a.active,
+.memo2 .req, .fund-info .req { font-weight: 500; }
+.roster .rn span { font-weight: 600; }
+.roster .rn span.mb, .roster .rn i { font-weight: 400; }
+.fund-info .acct, .memo-ex .big { font-weight: 600; }
+/* 문장 속 강조(<b>)는 한 단계만 */
+p b, dd b, li b, .jc-d b, .faq .a b { font-weight: 600; }
+.band-cta h2 { font-weight: 600; }
+.btn, .band-cta .btn.live { font-weight: 600; }
+/* Mac·iPhone에서 글자가 실제보다 두껍게 번져 보이지 않도록 */
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 </style>
 </head>
 <body>
