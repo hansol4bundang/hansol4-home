@@ -957,6 +957,14 @@ html[data-theme="dark"] p b, html[data-theme="dark"] dd b, html[data-theme="dark
 html[data-theme="dark"] .jc-d b, html[data-theme="dark"] .faq .a b { background: none; color: #FFD966; padding: 0; }
 html[data-theme="dark"] .memo-ex b, html[data-theme="dark"] .memo2 .m-rule b { color: var(--ink); }
 html[data-theme="dark"] .memo-ex .big { color: #6FA8FF; }
+
+/* 주의 문구: 필수 뱃지와 같은 채도 낮은 빨강 */
+:root { --caution: #B4443C; }
+.memo2 .req, .fund-info .req { background: var(--caution); }
+.jc-note, .memo2 .m-warn, .memo2 .m-warn b { color: var(--caution); }
+html[data-theme="dark"] { --caution-text: #E8877F; }
+html[data-theme="dark"] .jc-note, html[data-theme="dark"] .memo2 .m-warn, html[data-theme="dark"] .memo2 .m-warn b { color: var(--caution-text); }
+.memo2 .m-warn b { background: none; padding: 0; font-weight: 600; }
 </style>
 </head>
 <body>
