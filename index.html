@@ -920,6 +920,33 @@ p b, dd b, li b, .jc-d b, .faq .a b { font-weight: 600; }
 .btn, .band-cta .btn.live { font-weight: 600; }
 /* Mac·iPhone에서 글자가 실제보다 두껍게 번져 보이지 않도록 */
 body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* 설명회 다시 보기: 3단계 흐름 */
+.bc-flow { list-style: none; counter-reset: bf; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: center; }
+.bc-flow li { counter-increment: bf; display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; }
+.bc-flow li::before { content: counter(bf); display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; color: var(--accent); font-size: 13px; font-weight: 600; }
+.bc-flow li + li::after { content: none; }
+.bc-flow li:not(:last-child)::after { content: "→"; margin: 0 4px 0 6px; opacity: 0.7; }
+html[data-theme="dark"] .bc-flow li::before { color: #1C1C1C; }
+@media (max-width: 480px) {
+  .bc-flow { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .bc-flow li:not(:last-child)::after { content: none; }
+}
+
+/* 문장 속 강조: 굵게 대신 형광펜 배경 */
+p b, dd b, li b, .jc-d b, .faq .a b {
+  font-weight: 500; color: var(--ink);
+  background: linear-gradient(transparent 58%, #FFE58A 58%);
+  padding: 0 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+/* 파란 띠 위: 노란 글자 */
+.band-cta p b, .band-cta li b { background: none; color: #FFD966; padding: 0; }
+/* 다크모드: 형광펜을 은은하게 */
+html[data-theme="dark"] p b, html[data-theme="dark"] dd b, html[data-theme="dark"] li b,
+html[data-theme="dark"] .jc-d b, html[data-theme="dark"] .faq .a b { background: linear-gradient(transparent 58%, rgba(245, 184, 0, 0.35) 58%); }
+html[data-theme="dark"] .band-cta p b, html[data-theme="dark"] .band-cta li b { background: none; color: #FFD966; }
+/* 메모 칸 안 숫자 강조는 기존처럼 굵게 */
+.memo-ex b, .memo2 .m-rule b { background: none; padding: 0; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -1109,9 +1136,14 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
   <section class="band-cta" id="briefing">
     <div class="wrap in">
       <div class="txt">
-        <div class="when">2026년 10월 17일(토) 주민설명회</div>
-        <h2>설명회 녹화본과 질의응답은<br>네이버 카페에서 확인하세요</h2>
-        <p class="bc-lead">주민설명회 녹화본과 그날 나온 질문·답변을 네이버 카페에서 확인하실 수 있습니다.<br>카페는 <b>모금에 참여한 세대</b>만 가입이 승인됩니다.</p>
+        <div class="when">주민설명회 다시 보기 · 2026년 10월 17일(토)</div>
+        <h2>녹화본과 질의응답은<br>네이버 카페에서 볼 수 있습니다</h2>
+        <p class="bc-lead">카페는 <b>모금에 참여한 세대만</b> 가입할 수 있습니다.</p>
+        <ol class="bc-flow">
+          <li>모금 참여</li>
+          <li>카페 가입</li>
+          <li>녹화본·질의응답 보기</li>
+        </ol>
       </div>
       <div class="band-btns">
         <a class="btn live" href="#fund">모금 참여 안내 보기</a>
