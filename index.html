@@ -990,6 +990,8 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
 .fab-consent .pc-body { text-align: center; padding-inline: 12px; }
 .fab-consent .pc-x { position: absolute; top: 6px; right: 8px; width: 40px; height: 40px; border: 0; background: transparent; color: inherit; font-size: 28px; line-height: 1; cursor: pointer; }
 .fab-consent .pc-foot { margin-top: 14px; padding-top: 12px; border-top: 1px solid #E1E7F0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.fab-consent .pc-link { color: #1D5FD6; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; white-space: nowrap; }
+.fab-consent .pc-link:hover { color: #123F94; }
 .fab-consent label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px; }
 .fab-consent input { width: 20px; height: 20px; accent-color: #123F94; }
 .fab-consent .pc-close { background: #123F94; color: #FFFFFF; border: 0; border-radius: 99px; padding: 8px 20px; font: inherit; font-weight: 700; cursor: pointer; }
@@ -1357,8 +1359,8 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
   <button class="pc-x" type="button" id="consent-x" aria-label="닫기">×</button>
   <div class="pc-body">
     <b>2026-10-29 (목) 부터 동의서 발송 진행</b><br>
-    <b>사업시행방식 선호도 조사에도 꼭 체크해 주세요. (<a href="#method" style="color:#123F94">방식 안내 보기</a>)</b><br>
-    동의서를 받지 못했으면, 재준위 번호(<a href="sms:010-5926-4459" style="color:#123F94;font-weight:700;text-decoration:underline">010-5926-4459</a>, 문자 전용)로 동/호수/연락처를 기재하여 연락 부탁드립니다.
+    <b>사업시행방식 선호도 조사에도 꼭 체크해 주세요. (<a class="pc-link" href="#method">방식 안내 보기 ›</a>)</b><br>
+    동의서를 받지 못했으면, 재준위 번호(<a class="pc-link" href="sms:010-5926-4459">010-5926-4459</a>, 문자 전용)로 동/호수/연락처를 기재하여 연락 부탁드립니다.
   </div>
   <div class="pc-foot">
     <label><input type="checkbox" id="consent-today"> 오늘 하루 보지 않기</label>
