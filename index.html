@@ -997,7 +997,9 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
 .fab-consent .pc-link { color: #1D5FD6; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; white-space: nowrap; }
 .fab-consent .pc-link:hover { color: #123F94; }
 .fab-consent label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px; }
-.fab-consent input { width: 20px; height: 20px; accent-color: #123F94; }
+.fab-consent input { appearance: none; -webkit-appearance: none; width: 22px; height: 22px; margin: 0; border: 1px solid #D5DAE2; border-radius: 5px; background: #F0F2F5; cursor: pointer; display: inline-grid; place-content: center; flex: none; }
+.fab-consent input::after { content: ""; width: 6px; height: 11px; border: solid #17202E; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translate(-1px, -1px); opacity: 0; }
+.fab-consent input:checked::after { opacity: 1; }
 .fab-consent .pc-close { background: #123F94; color: #FFFFFF; border: 0; border-radius: 99px; padding: 8px 20px; font: inherit; font-weight: 700; cursor: pointer; }
 .fab-consent :focus-visible { outline: 3px solid #123F94; outline-offset: 3px; }
 @media (max-width: 760px) {
