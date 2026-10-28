@@ -961,6 +961,8 @@ html[data-theme="dark"] .jc-note, html[data-theme="dark"] .memo2 .m-warn, html[d
 /* 주민대표단: 조직도형 명단 (내부 관리·검증 / 대외·홍보·현장) */
 .roster.org { display: block; }
 .roster.org .org-top { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; padding: 0 0 14px; border-bottom: 1px solid #C9D3E2; }
+.roster.org .ot { display: flex; align-items: flex-start; gap: 12px; flex: 1 1 260px; min-width: 0; }
+.roster.org .ot .tk { flex-basis: 100%; font-size: 0.98rem; font-weight: 400; color: var(--body); }
 .roster.org .org-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; }
 .roster.org .org-col { min-width: 0; }
 .roster.org .org-h { padding: 14px 0 8px; font-size: 0.95rem; font-weight: 500; color: var(--body); letter-spacing: 0.02em; }
@@ -985,7 +987,8 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
   box-shadow: 0 8px 24px rgba(18, 63, 148, 0.35);
 }
 .fab-consent[hidden] { display: none; }
-.fab-consent .pc-body { text-align: center; }
+.fab-consent .pc-body { text-align: center; padding-inline: 12px; }
+.fab-consent .pc-x { position: absolute; top: 6px; right: 8px; width: 40px; height: 40px; border: 0; background: transparent; color: inherit; font-size: 28px; line-height: 1; cursor: pointer; }
 .fab-consent .pc-foot { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.35); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .fab-consent label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px; }
 .fab-consent input { width: 20px; height: 20px; accent-color: #F5B800; }
@@ -1227,22 +1230,21 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
       <div class="sec-head">
         <div class="tagline">주민대표단</div>
         <h2>주민대표단을 소개합니다</h2>
-        <p>지금은 '예비' 주민대표단으로 일하고 있습니다.<br>안쪽 살림을 살피는 팀과, 바깥 일을 맡는 팀으로 나누어 일합니다.</p>
+        <p>대표 아래 5개 팀이 일하고, 감사팀은 대표와 별개로 운영합니다.<br>재무·개인정보관리 2개 팀은 내부 관리를, 외부협력·홍보·소통 3개 팀은 대외와 현장을 맡습니다.</p>
       </div>
       <div class="roster org">
-        <div class="org-top"><div class="rg">위원장·부위원장</div><div class="rn"><span><i>위원장</i>곽재영</span><span><i>부위원장</i>이환</span></div></div>
+        <div class="org-top"><div class="ot"><div class="rg">대표</div><div class="rn"><span>곽재영</span></div></div><div class="ot"><div class="rg">감사팀</div><div class="rn"><span>옹준호</span><span>박준상</span><div class="tk">회계 검증, 동의서 개봉 참관</div></div></div></div>
         <div class="org-cols">
           <div class="org-col">
-            <div class="org-h">내부 관리·검증</div>
+            <div class="org-h">내부 관리</div>
             <div class="r"><div class="rg">재무팀</div><div class="rn"><span>강윤원</span><div class="tk">모금·사용내역 정리</div></div></div>
-            <div class="r"><div class="rg">감사팀</div><div class="rn"><span>옹준호</span><span>박준상</span><div class="tk">회계 검증, 동의서 개봉 입회</div></div></div>
-            <div class="r"><div class="rg">개인정보관리팀</div><div class="rn"><span>이환</span><span>곽재영</span><div class="tk">명부·동의서·대표 연락 휴대폰·파기</div></div></div>
+            <div class="r"><div class="rg">개인정보관리팀</div><div class="rn"><span>이환</span><span>곽재영</span><div class="tk">명부·동의서·대표 폰 관리</div></div></div>
           </div>
           <div class="org-col">
             <div class="org-h">대외·홍보·현장</div>
-            <div class="r"><div class="rg">외부협력팀</div><div class="rn"><span>신중민<em>신탁사</em></span><span>강윤원<em>법무</em></span><span>박민호<em>관리사무실</em></span></div></div>
-            <div class="r"><div class="rg">홍보팀</div><div class="rn"><span><i>팀장</i>오정민</span><span class="mb">정운영, 차하나</span><div class="tk">홍보물·채널·현수막</div></div></div>
-            <div class="r"><div class="rg">소통팀</div><div class="rn"><span><i>팀장</i>이상덕</span><span class="mb">안은주, 신현아, 김보람, 김정우</span></div></div>
+            <div class="r"><div class="rg">외부협력팀</div><div class="rn"><span>신중민</span><span>강윤원</span><span>박민호</span><div class="tk">예비사업시행자·법무법인·관리사무실</div></div></div>
+            <div class="r"><div class="rg">홍보팀</div><div class="rn"><span><i>팀장</i>오정민</span><span class="mb">정운영, 신현아</span><div class="tk">홍보물 제작·채널 운영</div></div></div>
+            <div class="r"><div class="rg">소통팀</div><div class="rn"><span><i>팀장</i>이상덕</span><span class="mb">안은주, 차하나, 김보람, 김정우</span><div class="tk">주민 대면 및 현장 지원</div></div></div>
           </div>
         </div>
       </div>
@@ -1274,7 +1276,7 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
         <h2>자주 묻는 질문</h2>
       </div>
       <div class="faq">
-        <details><summary>예비 주민대표단이 무엇인가요?</summary><div class="a">정식 주민대표단이 만들어지기 전에, 재건축 일을 먼저 맡아 하는 주민 모임입니다.<br>위원장님을 중심으로 재무, 감사, 개인정보관리, 외부협력, 홍보, 소통 팀이 나누어 일합니다.</div></details>
+        <details><summary>예비 주민대표단이 무엇인가요?</summary><div class="a">정식 주민대표단이 만들어지기 전에, 재건축 일을 먼저 맡아 하는 주민 모임입니다.<br>대표님을 중심으로 재무, 감사, 개인정보관리, 외부협력, 홍보, 소통 팀이 나누어 일합니다.</div></details>
         <details><summary>조합 방식과 신탁 방식 중 무엇으로 하나요?</summary><div class="a"><b>아직 정해지지 않았습니다.</b><br>두 방법이 어떻게 다른지 쉽게 정리해서 카페에 알려드립니다.<br>마지막 결정은 주민 투표로 합니다.</div></details>
         <details><summary>진행 소식은 어디서 보나요?</summary><div class="a">네이버 카페에 가입하면 자세하게 확인할 수 있습니다.</div></details>
         <details><summary>특별정비구역이 무엇인가요?</summary><div class="a">노후계획도시특별법에 따라 오래된 신도시 단지를 새로 지을 수 있도록 정해 주는 구역입니다.<br>성남시가 차례로 지정하며, 우리 단지는 3차 지정을 목표로 준비하고 있습니다.</div></details>
@@ -1353,6 +1355,7 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
   </div>
 </footer>
 <div class="fab-consent" id="consent-pop" role="dialog" aria-label="동의서 발송 안내" hidden>
+  <button class="pc-x" type="button" id="consent-x" aria-label="닫기">×</button>
   <div class="pc-body">
     <b>2026-10-29 (목) 부터 동의서 발송 진행</b><br>
     <b>사업시행방식 선호도 조사에도 꼭 체크해 주세요. (<a href="#method" style="color:inherit">방식 안내 보기</a>)</b><br>
@@ -1372,12 +1375,14 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
   var hidden = false;
   try { hidden = localStorage.getItem(key) === today; } catch (e) {}
   if (!hidden) pop.hidden = false;
-  document.getElementById("consent-close").addEventListener("click", function () {
+  function closePop() {
     if (document.getElementById("consent-today").checked) {
       try { localStorage.setItem(key, today); } catch (e) {}
     }
     pop.hidden = true;
-  });
+  }
+  document.getElementById("consent-close").addEventListener("click", closePop);
+  document.getElementById("consent-x").addEventListener("click", closePop);
 })();
 </script>
 
