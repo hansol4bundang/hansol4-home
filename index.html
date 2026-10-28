@@ -1050,6 +1050,9 @@ html[data-theme="dark"] .mcall { background: #3A3216; color: #FFF3C4; }
 .jc .jc-note { font-weight: 600; }
 /* 모금 안내: 노란 형광펜 제거, 굵게만 */
 .fund-info dd b, .memo2 p b, html[data-theme="dark"] .fund-info dd b, html[data-theme="dark"] .memo2 p b { background: none; color: inherit; padding: 0; }
+/* 통장 메모 칸: 노랑 대신 검정 옅은 투명도(회색) */
+.fund-info .memo, .memo2 { background: rgba(0, 0, 0, 0.06); }
+html[data-theme="dark"] .fund-info .memo, html[data-theme="dark"] .memo2 { background: rgba(255, 255, 255, 0.08); }
 </style>
 </head>
 <body>
