@@ -984,11 +984,24 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
   background: var(--accent); color: #FFFFFF; font-size: 16px; font-weight: 500;
   box-shadow: 0 8px 24px rgba(18, 63, 148, 0.35);
 }
-footer { padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px)); }
+footer { padding-bottom: calc(190px + env(safe-area-inset-bottom, 0px)); }
 @media (max-width: 760px) {
   .fab-consent { left: 16px; right: 16px; transform: none; width: auto; }
 }
 html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
+
+/* 사업시행방식 안내 */
+.mcall { margin-bottom: 28px; background: #FFF3C4; color: #1F2937; border-left: 6px solid #F5B800; padding: 18px 22px; font-size: 1.25rem; font-weight: 700; line-height: 1.6; }
+.mcall em { font-style: normal; text-decoration: underline; text-underline-offset: 4px; }
+.meth { border-top: 2px solid var(--ink); }
+.meth .m { padding: 26px 0; border-bottom: 1px solid var(--line); }
+.meth h3 { font-size: 1.4rem; font-weight: 700; line-height: 1.4; }
+.meth h3 small { font-size: 0.95rem; font-weight: 500; color: var(--muted); margin-left: 8px; }
+.meth .who { margin-top: 8px; color: var(--body); font-size: 1.07rem; line-height: 1.85; }
+.meth h4 { margin-top: 16px; font-size: 1.07rem; font-weight: 700; color: var(--accent); }
+.meth ul { margin: 6px 0 0; padding-left: 1.2em; color: var(--body); font-size: 1.07rem; line-height: 1.85; }
+.mnote { margin-top: 20px; color: var(--muted); font-size: 1rem; line-height: 1.8; }
+html[data-theme="dark"] .mcall { background: #3A3216; color: #FFF3C4; }
 </style>
 </head>
 <body>
@@ -1000,6 +1013,7 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
       <a href="#progress">진행 단계</a>
       <a href="#status">지금 상황</a>
       <a href="#why">출범 이유</a>
+      <a href="#method">시행방식</a>
       <a href="#timeline">진행 순서</a>
       <a href="#committee">주민대표단</a>
       <a href="#faq">궁금한 점</a>
@@ -1116,6 +1130,68 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
         </div>
       </div>
       <p class="why-note"><b>주민대표단 출범 동의서</b>는 이 모임이 정식으로 시작하도록 주민 여러분의 뜻을 모으는 서류입니다.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="method">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tagline">사업시행방식 선호도 조사</div>
+        <h2>재건축을 누가 이끌어 갈지,<br>소유주분의 의견을 묻습니다</h2>
+        <p>사업시행방식은 조합방식, 신탁방식, 공공방식 세 가지입니다.<br>이 조사는 방식을 확정하는 절차가 아닙니다.<br>결과는 준비위원회가 방식을 검토하고 설명회를 준비하는 데 참고합니다.<br>최종 방식은 법에서 정한 동의 절차를 거쳐 정해집니다.</p>
+      </div>
+      <div class="mcall" role="note">동의서와 함께 받으시는 <em>선호도 조사서에서 원하시는 방식 1개에 꼭 체크해 주세요.</em><br>중복 체크는 불가합니다.</div>
+      <div class="meth">
+        <div class="m">
+          <h3>조합방식<small>도시정비법 제35조</small></h3>
+          <p class="who">사업시행자: 소유주가 설립하는 조합</p>
+          <h4>장점</h4>
+          <ul>
+            <li>총회에서 소유주가 시공사 선정, 예산 등을 직접 의결·통제해 소유주 이익을 반영할 여지가 큽니다.</li>
+            <li>신탁 보수가 따로 들지 않습니다. (단, 운영비·용역비 등은 사업비로 부담)</li>
+            <li>조합 임원 선출·해임, 회계·계약 공개 등으로 소유주가 운영을 직접 살펴볼 수 있습니다.</li>
+          </ul>
+          <h4>단점·유의</h4>
+          <ul>
+            <li>구역 지정 후 조합설립 절차가 추가되어 기간이 길어질 확률이 있습니다. (동의가 빠르면 신탁과의 차이가 작을 수 있음)</li>
+            <li>사업 진행이 조합 임원진의 역량과 소유주 간 의견 조율에 좌우됩니다.</li>
+            <li>조합이 자금을 조달해 공사비를 지급하므로, 조합 신용도에 따라 금리·지급 조건이 달라질 수 있습니다.</li>
+          </ul>
+        </div>
+        <div class="m">
+          <h3>신탁방식<small>도시정비법 제27조</small></h3>
+          <p class="who">사업시행자: 신탁사 (외부 전문 회사)</p>
+          <h4>장점</h4>
+          <ul>
+            <li>조합설립 절차가 없어 기간이 단축될 확률이 있습니다. (법정 동의 요건 충족 필요, 동의 확보 속도에 따라 다름)</li>
+            <li>신탁사(회사)가 운영해 조합 임원·소유주 간 갈등으로 일정이 지체될 가능성이 상대적으로 낮습니다.</li>
+            <li>신탁사가 자금을 조달·관리해 시공사에 대한 자금 의존도가 낮아집니다. (조달 금융비용은 사업비에 포함)</li>
+          </ul>
+          <h4>단점·유의</h4>
+          <ul>
+            <li>신탁사(회사) 주도이기 때문에, 조합방식보다 소유주 통제력이 약합니다.</li>
+            <li>신탁 보수가 발생합니다. (한솔 4단지 사업성 기준 약 400억 원 내외, 산정 기준에 따라 달라질 수 있음)</li>
+            <li>법에서 정한 의결 사항 외 사안의 소유주 투표 범위는 신탁계약에 따라 달라지며, 계약 해지·신탁사 교체는 정해진 절차와 동의 요건을 따라야 합니다.</li>
+          </ul>
+        </div>
+        <div class="m">
+          <h3>공공방식<small>도시정비법 제26조</small></h3>
+          <p class="who">사업시행자: LH 등 공공기관 (성남시장이 법정 요건·동의 비율 충족 시 지정하며, 소유주가 임의로 선택하는 방식은 아닙니다)</p>
+          <h4>장점</h4>
+          <ul>
+            <li>공공기관이 총괄해 국가의 감독·감사 체계 안에서 관리되며, 투명성·신뢰성이 높다는 평가가 있습니다.</li>
+            <li>공공기관이 재원을 조달해 비교적 안정적인 자금 조달이 가능하다고 알려져 있습니다.</li>
+            <li>시행자 지정 후 조합설립 절차 없이 진행되어 기간이 단축될 확률이 있습니다. (지정 절차·동의 확보 속도에 따라 달라짐)</li>
+          </ul>
+          <h4>단점·유의</h4>
+          <ul>
+            <li>공공성 조건(공공임대 등)에 따라 일반분양 물량과 분담금이 달라질 수 있고, 상품성(단지 구성 등)에 제약이 생길 수 있습니다.</li>
+            <li>조합방식보다 소유주 통제력이 약합니다. (주민대표회의로 의견을 반영하나 최종 시행 권한은 시행자)</li>
+            <li>공공기관의 의사결정이 절차 중심으로 진행되어 속도·유연성이 낮아질 수 있습니다.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mnote">위 내용은 일반적인 특징이며, 실제 조건은 협약 단계에서 달라질 수 있습니다.<br>비용은 산정 기준이 달라 단순 비교가 어렵습니다.</p>
     </div>
   </section>
 
@@ -1285,6 +1361,7 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
 </footer>
 <div class="fab-consent" role="note">
   <b>2026-10-29 (목) 부터 동의서 발송 진행</b><br>
+  <b>사업시행방식 선호도 조사에도 꼭 체크해 주세요. (<a href="#method" style="color:inherit">방식 안내 보기</a>)</b><br>
   동의서를 받지 못했으면, 재준위 번호(<a href="sms:010-5926-4459" style="color:inherit;font-weight:700;text-decoration:underline">010-5926-4459</a>, 문자 전용)로 동/호수/연락처를 기재하여 연락 부탁드립니다.
 </div>
 
