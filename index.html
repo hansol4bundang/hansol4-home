@@ -993,7 +993,7 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
 .fab-consent .pc-text b { color: #17202E; font-weight: 700; }
 .fab-consent .pc-note { margin: 10px 0 0; font-size: 14px; line-height: 1.65; color: #536075; font-weight: 400; }
 .fab-consent .pc-x { position: absolute; top: 6px; right: 8px; width: 40px; height: 40px; border: 0; background: transparent; color: inherit; font-size: 28px; line-height: 1; cursor: pointer; }
-.fab-consent .pc-foot { margin-top: 14px; padding-top: 12px; border-top: 1px solid #E1E7F0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.fab-consent .pc-foot { margin-top: 14px; padding-top: 12px; border-top: 1px solid #E1E7F0; display: flex; align-items: center; justify-content: center; gap: 12px; }
 .fab-consent .pc-link { color: #1D5FD6; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; white-space: nowrap; }
 .fab-consent .pc-link:hover { color: #123F94; }
 .fab-consent label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px; }
@@ -1389,25 +1389,15 @@ html[data-theme="dark"] .mcall { background: #3A3216; color: #FFF3C4; }
     <p class="pc-note">동의서를 못 받으셨나요?<br>재준위 번호(<a class="pc-link" href="sms:010-5926-4459">010-5926-4459</a>, 문자 전용)로 동·호수·연락처를 보내 주세요.</p>
   </div>
   <div class="pc-foot">
-    <label><input type="checkbox" id="consent-today"> 오늘 하루 보지 않기</label>
     <button class="pc-close" type="button" id="consent-close">닫기</button>
   </div>
 </div>
 <script>
 (function () {
-  // 동의서 안내 팝업: '오늘 하루 보지 않기'를 체크하고 닫으면 오늘은 다시 뜨지 않습니다.
+  // 동의서 안내 팝업: 접속할 때마다 뜨고, 닫기·× 로 닫을 수 있습니다.
   var pop = document.getElementById("consent-pop");
-  var key = "consentPopHideDate";
-  var today = new Date().toLocaleDateString("sv-SE");
-  var hidden = false;
-  try { hidden = localStorage.getItem(key) === today; } catch (e) {}
-  if (!hidden) pop.hidden = false;
-  function closePop() {
-    if (document.getElementById("consent-today").checked) {
-      try { localStorage.setItem(key, today); } catch (e) {}
-    }
-    pop.hidden = true;
-  }
+  pop.hidden = false;
+  function closePop() { pop.hidden = true; }
   document.getElementById("consent-close").addEventListener("click", closePop);
   document.getElementById("consent-x").addEventListener("click", closePop);
 })();
