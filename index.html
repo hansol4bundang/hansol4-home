@@ -561,7 +561,7 @@ h2, h3 { font-weight: 700; }
 .pg li:first-child::before { display: none; }
 .pg li.done + li::before { background: var(--accent); }
 .pg .dot { position: relative; z-index: 1; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #FFFFFF; border: 2px solid #D5DCE7; color: var(--body); }
-.pg li.done .dot { background: #FFFFFF; border-color: #C9D3E2; color: var(--ink); }
+.pg li.done .dot { background: #FFFFFF; border-color: var(--accent); color: var(--accent); }
 .pg li.now .dot { background: var(--accent); border-color: var(--accent); color: #FFFFFF; box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.15); }
 .pg .lb { margin-top: 10px; font-size: 0.95rem; line-height: 1.35; color: var(--body); word-break: keep-all; }
 .pg li.done .lb { color: var(--ink); }
