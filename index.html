@@ -979,16 +979,14 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
 .fab-consent {
   position: fixed; z-index: 40; left: 50%; transform: translateX(-50%);
   bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 16px 28px; border-radius: 99px; text-decoration: none;
-  background: var(--accent); color: #FFFFFF; font-size: 18px; font-weight: 600; white-space: nowrap;
+  width: min(560px, calc(100% - 32px)); box-sizing: border-box;
+  padding: 16px 24px; border-radius: 20px; text-align: center; line-height: 1.6;
+  background: var(--accent); color: #FFFFFF; font-size: 16px; font-weight: 500;
   box-shadow: 0 8px 24px rgba(18, 63, 148, 0.35);
 }
-.fab-consent:hover { filter: brightness(1.08); }
-.fab-consent:focus-visible { outline: 3px solid #F5B800; outline-offset: 3px; }
-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+footer { padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px)); }
 @media (max-width: 760px) {
-  .fab-consent { left: 16px; right: 16px; transform: none; width: auto; padding-block: 16px; }
+  .fab-consent { left: 16px; right: 16px; transform: none; width: auto; }
 }
 html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
 </style>
@@ -1285,10 +1283,10 @@ html[data-theme="dark"] .fab-consent { background: #2F6FE0; color: #FFFFFF; box-
     </div>
   </div>
 </footer>
-<a class="fab-consent" href="https://www.buonestop.com/h/hansol4/member-info-verification/intro" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></svg>
-  <span>주민대표단 동의서 작성하기</span>
-</a>
+<div class="fab-consent" role="note">
+  <b>2026-10-29 (목) 부터 동의서 발송 진행</b><br>
+  동의서를 받지 못했으면, 재준위 번호로 동/호수/연락처를 기재하여 연락 부탁드립니다.
+</div>
 
 
 <script>
