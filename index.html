@@ -989,6 +989,11 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
 .fab-consent[hidden] { display: none; }
 .fab-consent .pc-body { text-align: center; padding-inline: 20px; }
 .fab-consent .pc-title { margin: 0; font-size: 19px; font-weight: 700; line-height: 1.45; color: #123F94; }
+.fab-consent .pc-list { margin: 12px 0 0; text-align: left; }
+.fab-consent .pc-list > div { display: flex; gap: 14px; padding: 10px 0; border-top: 1px solid #E1E7F0; }
+.fab-consent .pc-list dt { flex: 0 0 7.2em; white-space: nowrap; font-size: 14px; font-weight: 700; color: #536075; line-height: 1.7; }
+.fab-consent .pc-list dd { margin: 0; font-size: 16px; line-height: 1.7; }
+.fab-consent .pc-list b { color: #17202E; }
 .fab-consent .pc-text { margin: 10px 0 0; font-size: 17px; line-height: 1.65; }
 .fab-consent .pc-text b { color: #17202E; font-weight: 700; }
 .fab-consent .pc-note { margin: 10px 0 0; font-size: 14px; line-height: 1.65; color: #536075; font-weight: 400; }
@@ -1385,8 +1390,11 @@ html[data-theme="dark"] .mcall { background: #3A3216; color: #FFF3C4; }
   <button class="pc-x" type="button" id="consent-x" aria-label="닫기">×</button>
   <div class="pc-body">
     <h3 class="pc-title">동의서 발송 안내</h3>
-    <p class="pc-text"><b>2026-10-29 (목)부터 동의서를 보내드립니다.</b><br>선호도 조사서에서 원하시는 사업시행방식 1개에 체크해 주세요.<br><a class="pc-link" href="#method">방식 안내 보기 ›</a></p>
-    <p class="pc-note">동의서를 못 받으셨나요?<br>재준위 번호(<a class="pc-link" href="sms:010-5926-4459">010-5926-4459</a>, 문자 전용)로 동·호수·연락처를 보내 주세요.</p>
+    <dl class="pc-list">
+      <div><dt>발송일</dt><dd><b>2026-10-29 (목)</b>부터 동의서를 보내드립니다.</dd></div>
+      <div><dt>하실 일</dt><dd>선호도 조사서에서 <b>원하는 사업시행방식 1개에 체크</b>해 주세요.<br><a class="pc-link" href="#method">방식 안내 보기 ›</a></dd></div>
+      <div><dt>못 받으셨다면</dt><dd><a class="pc-link" href="sms:010-5926-4459">010-5926-4459</a> (문자 전용)로<br>동·호수·연락처를 보내 주세요.</dd></div>
+    </dl>
   </div>
   <div class="pc-foot">
     <button class="pc-close" type="button" id="consent-close">닫기</button>
