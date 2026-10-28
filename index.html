@@ -1000,7 +1000,13 @@ html[data-theme="dark"] .roster.org .org-top, html[data-theme="dark"] .roster.or
 .fab-consent .pc-list { margin: 12px 0 0; text-align: left; }
 .fab-consent .pc-list > div { display: flex; gap: 8px; padding: 10px 0; border-top: 1px solid #E1E7F0; }
 .fab-consent .pc-list dt { flex: 0 0 6.9em; white-space: nowrap; font-size: 14px; font-weight: 700; color: #536075; line-height: 1.7; }
-.fab-consent .pc-list dd { margin: 0; font-size: 16px; line-height: 1.7; }
+.fab-consent .pc-list dd { margin: 0; flex: 1 1 auto; min-width: 0; font-size: 16px; line-height: 1.7; }
+.fab-consent .pc-list .pc-link { white-space: normal; }
+.fab-consent .pc-list a[href^="sms"] { white-space: nowrap; }
+@media (max-width: 480px) {
+  .fab-consent .pc-list > div { flex-direction: column; gap: 0; }
+  .fab-consent .pc-list dt { flex: none; }
+}
 .fab-consent .pc-list b { color: #17202E; }
 .fab-consent .pc-text { margin: 10px 0 0; font-size: 17px; line-height: 1.65; }
 .fab-consent .pc-text b { color: #17202E; font-weight: 700; }
