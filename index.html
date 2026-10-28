@@ -1431,6 +1431,8 @@ html[data-theme="dark"] .fund-info .memo, html[data-theme="dark"] .memo2 { backg
   function closePop() { pop.hidden = true; }
   document.getElementById("consent-close").addEventListener("click", closePop);
   document.getElementById("consent-x").addEventListener("click", closePop);
+  // 사업방식 선호도 조사 안내 링크를 누르면 해당 위치로 이동하면서 팝업도 닫힙니다.
+  pop.querySelector('a[href="#method"]').addEventListener("click", closePop);
 })();
 </script>
 
