@@ -938,8 +938,8 @@ p b, dd b, li b, .jc-d b, .faq .a b {
 .fab-consent .pc-title { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.45; color: #123F94; }
 .fab-consent .pc-list { margin: 12px 0 0; text-align: left; }
 .fab-consent .pc-list > div { display: flex; gap: 8px; padding: 10px 0; border-top: 1px solid #E1E7F0; }
-.fab-consent .pc-list dt { flex: 0 0 6.9em; white-space: nowrap; font-size: 14px; font-weight: 700; color: #536075; line-height: 1.7; }
-.fab-consent .pc-list dd { margin: 0; flex: 1 1 auto; min-width: 0; font-size: 16px; line-height: 1.7; }
+.fab-consent .pc-list dt { flex: 0 0 6.9em; white-space: nowrap; font-size: 15px; font-weight: 700; color: #536075; line-height: 1.7; }
+.fab-consent .pc-list dd { margin: 0; flex: 1 1 auto; min-width: 0; font-size: 18px; line-height: 1.7; }
 .fab-consent .pc-list .ph { display: inline-block; }
 .fab-consent .pc-list .pc-link { white-space: normal; }
 .fab-consent .pc-list a[href^="sms"] { white-space: nowrap; }
@@ -951,7 +951,6 @@ p b, dd b, li b, .jc-d b, .faq .a b {
 .fab-consent .pc-text { margin: 10px 0 0; font-size: 17px; line-height: 1.65; }
 .fab-consent .pc-text b { color: #17202E; font-weight: 700; }
 .fab-consent .pc-note { margin: 10px 0 0; font-size: 14px; line-height: 1.65; color: #536075; font-weight: 400; }
-.fab-consent .pc-x { position: absolute; top: 6px; right: 8px; width: 40px; height: 40px; border: 0; background: transparent; color: inherit; font-size: 28px; line-height: 1; cursor: pointer; }
 .fab-consent .pc-foot { margin-top: 14px; padding-top: 12px; border-top: 1px solid #E1E7F0; display: flex; align-items: center; justify-content: center; gap: 12px; }
 .fab-consent .pc-link { color: var(--blue-link); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; white-space: nowrap; }
 .fab-consent .pc-link:hover { color: #123F94; }
@@ -1350,7 +1349,6 @@ p b, dd b, li b, .jc-d b, .faq .a b {
   </div>
 </footer>
 <div class="fab-consent" id="consent-pop" role="dialog" aria-label="주민대표단 동의서 발송 안내" hidden>
-  <button class="pc-x" type="button" id="consent-x" aria-label="닫기">×</button>
   <div class="pc-body">
     <h3 class="pc-title">주민대표단 동의서 발송 안내</h3>
     <dl class="pc-list">
@@ -1370,7 +1368,6 @@ p b, dd b, li b, .jc-d b, .faq .a b {
   pop.hidden = false;
   function closePop() { pop.hidden = true; }
   document.getElementById("consent-close").addEventListener("click", closePop);
-  document.getElementById("consent-x").addEventListener("click", closePop);
   // 사업방식 선호도 조사 안내 링크를 누르면 해당 위치로 이동하면서 팝업도 닫힙니다.
   pop.querySelector('a[href="#method"]').addEventListener("click", closePop);
 })();
