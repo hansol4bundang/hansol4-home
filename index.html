@@ -933,7 +933,8 @@ p b, dd b, li b, .jc-d b, .faq .a b {
   background: #FFFFFF; color: #17202E; font-size: 16px; font-weight: 500;
   border: 1px solid #C9D3E2; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
-.fab-consent[hidden] { display: none; }
+.fab-consent[hidden], .consent-dim[hidden] { display: none; }
+.consent-dim { position: fixed; inset: 0; z-index: 39; background: rgba(0, 0, 0, 0.4); }
 .fab-consent .pc-body { text-align: center; padding-inline: 0; }
 .fab-consent .pc-x { position: absolute; top: 12px; right: 14px; width: 40px; height: 40px; border: 0; background: transparent; color: var(--ink); font-size: 30px; line-height: 1; cursor: pointer; }
 .fab-consent .pc-title { margin: 0; text-align: left; padding-right: 36px; font-size: 24px; font-weight: 700; line-height: 1.45; color: #123F94; }
@@ -1359,6 +1360,7 @@ b.nh { background: none; padding: 0; }
     </div>
   </div>
 </footer>
+<div class="consent-dim" id="consent-dim" hidden></div>
 <div class="fab-consent" id="consent-pop" role="dialog" aria-label="주민대표단 동의서 문자 발송 안내" hidden>
   <button class="pc-x" type="button" id="consent-x" aria-label="닫기">×</button>
   <div class="pc-body">
@@ -1378,8 +1380,9 @@ b.nh { background: none; padding: 0; }
 (function () {
   // 동의서 안내 팝업: 접속할 때마다 뜨고, 닫기·× 로 닫을 수 있습니다.
   var pop = document.getElementById("consent-pop");
-  pop.hidden = false;
-  function closePop() { pop.hidden = true; }
+  var dim = document.getElementById("consent-dim");
+  pop.hidden = false; dim.hidden = false;
+  function closePop() { pop.hidden = true; dim.hidden = true; }
   document.getElementById("consent-close").addEventListener("click", closePop);
   document.getElementById("consent-x").addEventListener("click", closePop);
   // 사업방식 선호도 조사 안내 링크를 누르면 해당 위치로 이동하면서 팝업도 닫힙니다.
