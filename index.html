@@ -1008,6 +1008,17 @@ b.nh { background: none; padding: 0; }
 /* 공동소유자 신분증 안내: 주의 빨강 */
 .caution-note { color: var(--caution, #B4443C); font-size: 16px; }
 .g-body p.caution-note { margin-top: 4px; color: var(--caution, #B4443C); font-size: 16px; }
+/* 메뉴가 화면보다 길면(가로모드 등) 메뉴 안에서 스크롤 */
+@media (max-width: 1080px) {
+  .header.open .nav {
+    max-height: calc(100vh - var(--header-h) - env(safe-area-inset-top, 0px));
+    max-height: calc(100dvh - var(--header-h) - env(safe-area-inset-top, 0px));
+    overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+  }
+}
+@media (max-width: 1080px) and (max-height: 500px) {
+  .header.open .nav a { padding: 10px 8px; }
+}
 </style>
 </head>
 <body>
