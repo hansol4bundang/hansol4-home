@@ -1028,6 +1028,8 @@ b.nh { background: none; padding: 0; }
 @media (max-width: 1080px) and (max-height: 500px) {
   .header.open .nav a { padding: 10px 8px; }
 }
+/* 메뉴가 열려 있는 동안 뒤 화면 스크롤 잠금(메뉴만 스크롤) */
+html.menu-open { overflow: hidden; }
 </style>
 </head>
 <body>
@@ -1458,7 +1460,11 @@ b.nh { background: none; padding: 0; }
     header.classList.toggle("open", open);
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+    // 메뉴가 열려 있으면 뒤 화면은 스크롤되지 않게 잠그고, 삼선 아이콘은 X(닫기)로 바꿈
+    document.documentElement.classList.toggle("menu-open", open);
+    burger.querySelector("path").setAttribute("d", open ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16");
   }
+  window.addEventListener("resize", function () { if (window.innerWidth > 1080) setNav(false); });
   burger.addEventListener("click", function () { setNav(!header.classList.contains("open")); });
   document.getElementById("nav").addEventListener("click", function (e) { if (e.target.tagName === "A") setNav(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setNav(false); });
