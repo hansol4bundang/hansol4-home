@@ -1016,6 +1016,15 @@ b.nh { background: none; padding: 0; }
     overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
   }
 }
+/* 메뉴 스크롤바를 항상 보이게(iOS 포함) */
+@media (max-width: 1080px) {
+  .header.open .nav::-webkit-scrollbar { width: 8px; }
+  .header.open .nav::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.06); border-radius: 4px; }
+  .header.open .nav::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.4); border-radius: 4px; }
+}
+@supports (-moz-appearance: none) {
+  .header.open .nav { scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.06); }
+}
 @media (max-width: 1080px) and (max-height: 500px) {
   .header.open .nav a { padding: 10px 8px; }
 }
