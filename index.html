@@ -1153,6 +1153,22 @@ html.menu-open { overflow: hidden; }
 #committee .t-grp { background: #E6F4EE; border-left-color: #F3F8F6; border-right-color: #F3F8F6; }
 #committee .t-card.aud { background: #FFFFFF; }
 @media (max-width: 900px) { #committee .tree { padding: 20px 12px; } #committee .t-grp { border: 0; } }
+
+/* 카페 가입 단계 박스: 옅은 초록 배경 */
+.flow li:not(.last) .fs { background: #E6F4EE; }
+
+/* 조직도·카페 단계 영역: 같은 옅은 초록 */
+:root { --area: #E9F3EE; }
+#committee .tree { background: var(--area); }
+#committee .t-grp { background: rgba(255, 255, 255, 0.55); border-left-color: var(--area); border-right-color: var(--area); }
+.flow li:not(.last) .fs { background: var(--area); }
+@media (max-width: 900px) { #committee .t-grp { border: 0; } }
+
+/* 조직도: 바깥 배경은 흰색, 카드(박스)에 옅은 초록 */
+#committee .tree { background: transparent; padding: 8px 0 0; }
+#committee .t-grp { background: transparent; border-left-color: transparent; border-right-color: transparent; }
+#committee .t-card, #committee .t-card.aud { background: var(--area); }
+#committee .t-lab { color: #444444; }
 </style>
 </head>
 <body>
