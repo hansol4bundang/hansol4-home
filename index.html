@@ -1116,6 +1116,14 @@ html.menu-open { overflow: hidden; }
   .tl-list li { padding: 14px 0; }
   .fs { min-height: 0; }
 }
+
+/* 아래에 이어지는 내용이 없는 섹션은 제목 밑 구분선 제거 */
+#why .sec-head, #consent .sec-head { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+/* 선은 구분할 내용이 있을 때만: 겹치는 선·맨 끝에 혼자 남는 선 제거 */
+.faq { border-top: 0; }
+.faq details:last-child { border-bottom: 0; }
+.sec-head + .flowbox { border-top: 0; padding-top: 0; margin-top: 0; }
+.tl-list li:last-child, .roster .r:last-child { border-bottom: 0; }
 </style>
 </head>
 <body>
