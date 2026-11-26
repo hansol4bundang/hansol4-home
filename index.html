@@ -996,15 +996,9 @@ b.nh { background: none; padding: 0; }
 html.menu-open { overflow: hidden; }
 
 /* ===== 2026-11 개정: 목차 · 사업방식 결과 · 진행 경과 · 조직도 트리 · 카페/카톡 플로우 ===== */
-.toc { padding: 12px 16px; }
-.toc-box { max-width: 1120px; margin-inline: auto; background: var(--bg); border: 1px solid #AEBBD0; border-radius: 24px; padding: 32px 44px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
-.toc-box h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; letter-spacing: -0.02em; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
-.toc-list { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
-.toc-list a { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 500; font-size: 1.08rem; line-height: 1.4; }
-.toc-list a:hover { color: var(--accent); }
-.toc-list .n { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #FFFFFF; font-weight: 700; font-size: 0.95rem; }
-@media (max-width: 760px) { .toc-box { padding: 24px 18px; border-radius: 18px; } .toc-list { grid-template-columns: 1fr; } }
-
+.pg-title .tagline { color: var(--accent); font-weight: 700; font-size: 1.25rem; }
+.pg-title h2 { margin-top: 8px; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.35; }
+.pg-head { align-items: flex-end; }
 .mres { margin-top: 28px; padding-top: 22px; border-top: 2px solid #AEBBD0; }
 .mres-h { font-size: 1.25rem; font-weight: 700; color: var(--ink); }
 .mres-bar { display: flex; height: 44px; margin-top: 14px; border-radius: 10px; overflow: hidden; gap: 2px; }
@@ -1054,7 +1048,7 @@ html.menu-open { overflow: hidden; }
 .t-tk { margin-top: 6px; font-size: 14px; color: var(--body); line-height: 1.4; }
 .t-card.aud, .t-row > .t-card { position: relative; }
 .t-card.aud { position: absolute; }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .t-mid { height: auto; margin: 0; padding: 18px 0 6px; }
   .t-mid::before, .t-mid::after, .t-teams::before, .t-row > .t-card::before { display: none; }
   .t-card.aud { position: relative; left: auto; top: auto; width: auto; margin-top: 8px; }
@@ -1089,6 +1083,38 @@ html.menu-open { overflow: hidden; }
   .flow, .flow.two { grid-template-columns: 1fr; gap: 26px; }
   .flow > li:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -26px; transform: translateX(-50%); }
   .flow .btn { width: 100%; }
+}
+
+/* ===== 글자 크기 체계: 14(작은 표기) · 16(보조) · 18(본문) · 22(소제목) · 제목 h2 · 히어로 h1 ===== */
+.here, .tl-now, .req, .hero-note, .tl-cnt, .t-lab, .pg .sb, .t-tk, .copy, small, .t-chip, .ml, .tl-ic { font-size: 14px !important; }
+.btn, .btn.sm, .pg .lb, .pg-src, .caution-note, .mres-note, .mres-list, .mc, .mc li, .tl-sub, .tl-foot, .tl-asof, .jc-note, .kk-warn,
+.fs span, .memo-ex li, .tl-list .d, .t-nm, .mnote, .nav a, .fund-info dt, .m-tip, .m-warn, .mcol .mh small, .mres-bar span, .pg-head p, .tcontact, footer, footer * { font-size: 16px !important; }
+.lead, .hero .lead, .sec-head p, .g-body p, .tl-list p, .faq .a, .g-label, .jc-d, .fs b, .tl-h, .pg .dot, .m-rule, .big, .memo-ex .big,
+.fund-info dd, .fund-info .acct, .phn, .ph-btn, .tl-link, .tl-red, .mres-list li, .pg li.now .lb { font-size: 18px !important; }
+.g-body h3, .tl-list h4, .faq summary, .jc-h, .fund-h, .t-box, .mres-h, .mh h3, .brand, .m-h, .pg-title .tagline, .sec-head .tagline, .hero-copy .h1-top, .h1-top { font-size: 22px !important; }
+.pg-head h2, .pg-title h2, .sec-head h2 { font-size: clamp(1.7rem, 4.6vw, 2.4rem) !important; }
+@media (max-width: 860px) { .pg .lb { font-size: 16px !important; } }
+
+/* ===== 모바일 우선 보강 ===== */
+.mswipe { display: none; }
+@media (max-width: 860px) {
+  /* 사업시행방식 3열 표 → 옆으로 미는 카드(세로 길이 단축) */
+  .mswipe { display: block; margin: 0 0 10px; font-size: 14px; color: var(--accent); font-weight: 700; text-align: center; }
+  .mgrid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 0 0 14px; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+  .mcol { flex: 0 0 min(86%, 420px); scroll-snap-align: start; display: block; }
+  .mgrid::-webkit-scrollbar { height: 6px; }
+  .mgrid::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.3); border-radius: 3px; }
+}
+@media (max-width: 640px) {
+  .sec, .sec.tint { padding: 8px 10px; }
+  .sec > .wrap { padding: 26px 16px; }
+  .sec-head { margin-bottom: 22px; padding-bottom: 16px; }
+  .g-row { padding: 20px 4px; gap: 4px; }
+  .btn, .btn.sm { min-height: 48px; }
+  .copy { min-height: 40px; padding: 6px 16px; margin-left: 10px; }
+  .faq summary { padding-block: 18px; }
+  .tl-list li { padding: 14px 0; }
+  .fs { min-height: 0; }
 }
 </style>
 </head>
@@ -1130,30 +1156,12 @@ html.menu-open { overflow: hidden; }
     </div>
   </section>
 
-  <section class="toc" id="toc" aria-label="목차">
-    <div class="wrap">
-      <div class="toc-box">
-        <h2>목차</h2>
-        <ol class="toc-list">
-          <li><a href="#progress"><span class="n">1</span>재건축 진행 순서</a></li>
-          <li><a href="#why"><span class="n">2</span>주민대표단이란</a></li>
-          <li><a href="#status"><span class="n">3</span>한솔4단지, 이렇게 준비하고 있습니다</a></li>
-          <li><a href="#consent"><span class="n">4</span>3차 지정에도 동의서가 필요합니다</a></li>
-          <li><a href="#method"><span class="n">5</span>소유주분의 의견을 묻습니다</a></li>
-          <li><a href="#timeline"><span class="n">6</span>지금까지 한 일, 앞으로 할 일</a></li>
-          <li><a href="#committee"><span class="n">7</span>주민대표단 조직도</a></li>
-          <li><a href="#faq"><span class="n">8</span>자주 묻는 질문</a></li>
-          <li><a href="#contact"><span class="n">9</span>소유주는 함께해주세요</a></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
   <section class="progress" id="progress" aria-label="재건축 진행 단계">
     <div class="wrap">
       <div class="pg-box">
       <div class="pg-head">
-        <h2>1. 재건축, 이런 순서로 진행됩니다</h2>
+        <div class="pg-title"><div class="tagline">1. 진행 순서</div>
+        <h2>재건축, 이런 순서로 진행됩니다</h2></div>
         <p>지금은 <b>주민대표단 출범</b> 단계입니다.</p>
       </div>
       <ol class="pg">
@@ -1190,7 +1198,6 @@ html.menu-open { overflow: hidden; }
       <div class="sec-head">
         <div class="tagline">3. 준비 현황</div>
         <h2>한솔4단지, 이렇게 준비하고 있습니다</h2>
-        <p>4단지만 따로 재건축을 추진합니다.</p>
       </div>
       <div class="group">
         <div class="g-row">
@@ -1218,7 +1225,7 @@ html.menu-open { overflow: hidden; }
       <div class="sec-head">
         <div class="tagline">4. 동의서</div>
         <h2>3차 지정에도 동의서가 필요합니다</h2>
-        <p>지난 2차 서류 접수 때 동의서를 제출해 주셨던 것처럼,<br>이번 3차 특별정비구역 지정을 새로 신청하려면 소유주분들의 동의서가 다시 필요합니다.</p>
+        <p>2차 서류 접수 때처럼, 3차 특별정비구역 지정을 새로 신청하려면 소유주분들의 동의서가 다시 필요합니다.</p>
       </div>
       <div class="group" id="vote">
         <div class="g-row hi">
@@ -1242,8 +1249,9 @@ html.menu-open { overflow: hidden; }
       <div class="sec-head">
         <div class="tagline">5. 사업시행방식</div>
         <h2>재건축을 누가 이끌어 갈지,<br>소유주분의 의견을 묻습니다</h2>
-        <p><b>어떤 방식이 있나요? 조합·신탁·공공 세 가지 방식</b><br>주민대표단은 최근 진행한 설문조사 결과를 바탕으로 소유주분들이 가장 선호하는 방식을 검토하고, 앞으로 열릴 설명회를 준비하는 데 참고할 예정입니다.<br>최종 사업시행방식은 추후 법에서 정한 정식 동의 절차를 거쳐 확정됩니다.</p>
+        <p>조합·신탁·공공, 세 가지 방식이 있습니다.<br>설문 결과는 설명회 준비에 참고하며, 최종 방식은 법에서 정한 동의 절차를 거쳐 확정됩니다.</p>
       </div>
+      <p class="mswipe" aria-hidden="true">← 옆으로 밀어서 세 방식을 비교해 보세요 →</p>
       <div class="mgrid">
         <div class="mcol c1">
           <div class="mh"><h3>조합방식</h3><small>도시정비법 제35조</small></div>
@@ -1292,9 +1300,9 @@ html.menu-open { overflow: hidden; }
         <div class="mres-h">사업방식 선호도 조사 결과</div>
         <div class="mres-bar" role="img" aria-label="신탁 69%, 조합 28%, 공공 3%"><span class="b1" style="flex:69">신탁 69%</span><span class="b2" style="flex:28">조합 28%</span><span class="b3" style="flex:3"></span></div>
         <ul class="mres-list"><li><i class="b1"></i>신탁 <b>69%</b></li><li><i class="b2"></i>조합 <b>28%</b></li><li><i class="b3"></i>공공 <b>3%</b></li></ul>
-        <p class="mres-note">(해당 설문은 사업 방식에 영향을 주지 않는 단순 선호도 조사입니다.)</p>
+        <p class="mres-note">※ 사업 방식에 영향을 주지 않는 단순 선호도 조사입니다.</p>
       </div>
-      <p class="mnote">위 내용은 일반적인 특징이며, 실제 조건은 협약 단계에서 달라질 수 있습니다.<br>비용은 산정 기준이 달라 단순 비교가 어렵습니다.</p>
+      <p class="mnote">위 내용은 일반적인 특징이며, 실제 조건은 협약 단계에서 달라질 수 있습니다.</p>
     </div>
   </section>
 
@@ -1303,7 +1311,7 @@ html.menu-open { overflow: hidden; }
       <div class="sec-head">
         <div class="tagline">6. 진행 경과</div>
         <h2>지금까지 한 일, 앞으로 할 일</h2>
-        <p>2차 공모의 아쉬움을 딛고, 3차 특별정비구역 선정을 위해 차근차근 준비하고 있습니다.<br><span class="tl-asof">한솔마을4단지 재건축추진준비위원회 · 2026년 11월 기준</span></p>
+        <p>3차 특별정비구역 선정을 위해 차근차근 준비하고 있습니다.<br><span class="tl-asof">2026년 11월 기준</span></p>
       </div>
       <div class="tl2">
         <div class="tl-col done">
@@ -1313,7 +1321,7 @@ html.menu-open { overflow: hidden; }
             <li><div class="d">9월 1일</div><h4>2차 특별정비구역 본안 접수</h4><p>성남시에 최종 본안 접수 · 9월 29일 결과 발표(미선정)</p></li>
             <li><div class="d">9월</div><h4>신탁 방식 검토 시작</h4><p>신탁·조합 방식 비교 착수 · 현수막 운영 기준 마련</p></li>
             <li><div class="d">10월 6일</div><h4>주민대표단 구성 서류 제출</h4><p>성남시에 주민대표단 동의서 검인 서류 제출</p></li>
-            <li><div class="d">10월 17일</div><h4>주민설명회 개최 · 주민대표단 소개</h4><p>노인정 현장 + 온라인 중계 · 조합·신탁 방식 비교, 법률 Q&amp;A<br><a class="tl-link" href="https://naver.me/xLNpbfaR" target="_blank" rel="noopener">주민설명회 다시보기 ›</a> <span class="tl-sub">(모금 참여 세대 전용 카페)</span></p></li>
+            <li><div class="d">10월 17일</div><h4>주민설명회 개최 · 주민대표단 소개</h4><p>노인정 현장 + 온라인 중계 · 조합·신탁 비교, 법률 Q&amp;A<br><a class="tl-link" href="https://naver.me/xLNpbfaR" target="_blank" rel="noopener">주민설명회 다시보기 ›</a> <span class="tl-sub">(모금 참여 세대 전용)</span></p></li>
             <li><div class="d">10월</div><h4>신탁사 4곳과 미팅 · 성남시 간담회</h4><p>신탁사별 역량 비교 · 성남시와 3차 공모 방향 확인</p></li>
             <li><div class="d">11월 3일</div><h4>주민대표단 동의서 징구 시작</h4><p>전자·서면 동의 병행 · <span class="tl-red">사업방식 선호도 조사 진행 (신탁 69% · 조합 28% · 공공 3%)</span></p></li>
             <li><div class="d">11월 6일</div><h4>주민대표단 동의율 3일 만에 50% 돌파</h4><p>징구 개시 3일 만에 달성</p></li>
@@ -1334,7 +1342,7 @@ html.menu-open { overflow: hidden; }
           </ul>
         </div>
       </div>
-      <p class="tl-foot">자세한 내용과 회의 기록은 한솔4 재건축 카페에서 확인하실 수 있습니다.</p>
+      <p class="tl-foot">자세한 내용과 회의 기록은 카페에서 확인하실 수 있습니다.</p>
     </div>
   </section>
 
@@ -1382,11 +1390,11 @@ html.menu-open { overflow: hidden; }
         <h2>자주 묻는 질문</h2>
       </div>
       <div class="faq">
-        <details><summary>재건축은 어떤 순서로 진행되나요?</summary><div class="a">일반적으로 아래 순서로 진행되며, 단계마다 소유주분들의 동의와 행정 절차를 거칩니다.<br><b>① 주민대표단 구성 → ② 사업방식(조합·신탁) 결정 → ③ 특별정비구역 지정 → ④ 사업시행자 지정(신탁) 또는 조합 설립(조합) → ⑤ 시공사 선정 → ⑥ 사업시행계획인가 → ⑦ 분양신청·관리처분계획인가 → ⑧ 이주·철거·착공 → ⑨ 준공·입주</b><br>우리 단지는 주민대표단이 구성되어 사업방식을 검토하고 있는 단계입니다.<br>세부 순서는 사업방식에 따라 일부 달라질 수 있으며, 진행 상황은 그때그때 안내드리겠습니다.</div></details>
-        <details><summary>우리 단지는 조합 방식과 신탁 방식 중 무엇으로 하나요?</summary><div class="a"><b>아직 정해지지 않았습니다.</b><br>주민설명회를 통해 각 방식의 장단점을 충분히 설명드린 뒤 결정합니다.<br>신탁 등 사업자를 정하는 경우에도 소유주 과반수의 동의를 받아 결정할 예정입니다.<br>[설명회 일정은 확정되는 대로 안내드리겠습니다.]</div></details>
-        <details><summary>진행 소식은 어디서 보나요?</summary><div class="a">한솔4단지재건축카페(모금전용)와 소유주 카카오톡방을 통해 안내드립니다.<br>구역 지정 등 공식 절차는 성남시 홈페이지 고시·공고에서도 확인하실 수 있습니다.<br>소유주방에 입장하지 않으신 분은 대표번호 <a href="sms:010-5926-4459">010-5926-4459</a>로 문자 주시면 입장 도와드리겠습니다.<br>확인되지 않은 소문보다는 주민대표단의 공식 안내를 기준으로 봐 주시기 바랍니다.</div></details>
+        <details><summary>재건축은 어떤 순서로 진행되나요?</summary><div class="a">단계마다 소유주분들의 동의와 행정 절차를 거칩니다.<br><b>① 주민대표단 구성 → ② 사업방식(조합·신탁) 결정 → ③ 특별정비구역 지정 → ④ 사업시행자 지정(신탁) 또는 조합 설립(조합) → ⑤ 시공사 선정 → ⑥ 사업시행계획인가 → ⑦ 분양신청·관리처분계획인가 → ⑧ 이주·철거·착공 → ⑨ 준공·입주</b><br>현재는 주민대표단이 사업방식을 검토하는 단계이며, 세부 순서는 사업방식에 따라 달라질 수 있습니다.</div></details>
+        <details><summary>우리 단지는 조합 방식과 신탁 방식 중 무엇으로 하나요?</summary><div class="a"><b>아직 정해지지 않았습니다.</b><br>주민설명회에서 각 방식의 장단점을 충분히 설명드린 뒤, 소유주 과반수의 동의를 받아 결정합니다.<br>설명회 일정은 확정되는 대로 안내드리겠습니다.</div></details>
+        <details><summary>진행 소식은 어디서 보나요?</summary><div class="a">한솔4단지재건축카페(모금전용)와 소유주 카카오톡방에서 안내드립니다.<br>구역 지정 등 공식 절차는 성남시 홈페이지 고시·공고에서도 확인하실 수 있습니다.<br>소유주방에 입장하지 않으셨다면 <a href="sms:010-5926-4459">010-5926-4459</a>로 문자 주세요. (문자 전용)<br>확인되지 않은 소문보다 주민대표단의 공식 안내를 기준으로 봐 주세요.</div></details>
         <details><summary>주민대표단은 무엇인가요?</summary><div class="a">노후계획도시특별법에 근거하여 소유주분들을 대표하여 재건축 초기 준비를 맡는 법정 조직입니다.<br>소유주 과반수의 동의와 성남시의 승인을 받아 구성되며, 5명 이상 25명 이하로 이루어집니다.<br>사업방식 검토, 특별정비계획 준비, 구역 지정 제안, 주민설명회 개최 등을 맡습니다.</div></details>
-        <details><summary>재건축 하면 매도가 불가능한가요?</summary><div class="a"><b>현재 단계에서는 정상적으로 매도하실 수 있습니다.</b><br>다만 분당은 투기과열지구여서, 사업이 진행되어 아래 시점이 지나면 그 이후 매수하신 분은 원칙적으로 조합원(새 아파트 분양대상)이 될 수 없습니다.<br>· 조합 방식: 조합설립인가 이후<br>· 신탁 방식: 사업시행자 지정 고시 이후<br>10년 이상 보유하고 5년 이상 거주한 1세대 1주택자 등 법에서 정한 예외도 있습니다.<br>해당 시점이 다가오면 미리 안내드리겠지만 개개인마다 상황이 다를 수 있어 일률적인 안내가 어려운 점 양해 부탁드립니다.</div></details>
+        <details><summary>재건축 하면 매도가 불가능한가요?</summary><div class="a"><b>현재 단계에서는 정상적으로 매도하실 수 있습니다.</b><br>다만 분당은 투기과열지구여서, 아래 시점 이후에 매수하신 분은 원칙적으로 조합원(새 아파트 분양대상)이 될 수 없습니다.<br>· 조합 방식: 조합설립인가 이후<br>· 신탁 방식: 사업시행자 지정 고시 이후<br>10년 이상 보유·5년 이상 거주한 1세대 1주택자 등 법에서 정한 예외도 있습니다.<br>해당 시점이 다가오면 미리 안내드리겠습니다. 개인별 상황이 달라 일률적인 안내는 어려운 점 양해 부탁드립니다.</div></details>
       </div>
     </div>
   </section>
@@ -1396,17 +1404,16 @@ html.menu-open { overflow: hidden; }
       <div class="sec-head">
         <div class="tagline">9. 소식 받는 방법</div>
         <h2>소유주는 함께해주세요</h2>
-        <p>네이버 카페 / 소유주 카카오톡방</p>
       </div>
 
       <div class="flowbox" id="cafe">
         <h3 class="jc-h">네이버 카페</h3>
-        <p class="jc-d">재건축 관련 정보, 우리단지 진행 상황, 주민설명회 녹화본 등 관련 자료 확인 가능 <span class="sep">|</span> <b>모금에 참여한 세대만</b> 가입 승인</p>
+        <p class="jc-d">재건축 정보, 진행 상황, 주민설명회 녹화본을 볼 수 있습니다. <b>모금에 참여한 세대만</b> 가입 승인</p>
         <ol class="flow">
           <li><div class="fs"><b>① 모금 참여</b><span>아래 계좌로 300,000원 입금</span></div></li>
           <li><div class="fs"><b>② 카페 가입 신청</b><span>네이버 카페에서 신청</span></div><a class="btn sm naver" id="cafe-btn" href="https://cafe.naver.com/hansol4rebuild" target="_blank" rel="noopener">네이버 카페 바로가기</a></li>
           <li><div class="fs"><b>③ 승인</b><span>납부 확인 후 가입 승인</span></div></li>
-          <li class="last"><div class="fs"><b>카페 이용</b><span>추진상세현황 · 모금액 지출내역 · 재건축 관련 정보 · 주민설명회 자료 등</span></div></li>
+          <li class="last"><div class="fs"><b>카페 이용</b><span>진행 현황 · 지출내역 · 설명회 자료 등</span></div></li>
         </ol>
         <div class="fundp" id="fund">
           <div class="fundp-grid">
@@ -1435,7 +1442,7 @@ html.menu-open { overflow: hidden; }
 
       <div class="flowbox kk" id="kakao">
         <h3 class="jc-h">소유주 카카오톡 방</h3>
-        <p class="jc-d">실시간으로 재건축 관련 내용, 동의서 제출 기간, 제출 방법 등을 안내해드립니다.</p>
+        <p class="jc-d">재건축 소식과 동의서 제출 안내를 실시간으로 드립니다.</p>
         <ol class="flow two">
           <li><div class="fs"><b>① 대표 번호로 문자</b><span class="phn">010-5926-4459 <button class="copy" type="button" data-copy="010-5926-4459">복사</button></span></div></li>
           <li class="last"><div class="fs"><b>② 카카오톡 방 초대</b><span>빠른 소식 받기</span></div></li>
