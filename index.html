@@ -1277,13 +1277,18 @@ h1, h2, h3, h4, .tagline { text-align: left; word-break: keep-all; overflow-wrap
 
 /* 회색 박스 30% 더 밝게(#F0F0F0 → #F5F5F5), 그림자도 함께 옅게 */
 :root { --box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 3px 10px rgba(0, 0, 0, 0.05); }
+
+/* 상단 로고 마크(명함 로고의 건물 심볼) */
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand-mark { height: 34px; width: auto; flex: none; display: block; }
+.brand .brand-tx > span { color: var(--accent); }
 </style>
 </head>
 <body>
 
 <header class="header" id="header">
   <div class="wrap bar">
-    <a class="brand" href="#top">한솔마을 <span>4단지</span></a>
+    <a class="brand" href="#top" aria-label="한솔마을 4단지 주민대표단 처음으로"><svg class="brand-mark" viewBox="72 58 46 73" aria-hidden="true" focusable="false"><path fill="#075946" d="M100.125 130.387 L72.398 130.387 L72.398 87.332 L100.125 69.562 Z"/><path fill="#40B88B" d="M117.289 130.387 L102.766 130.387 L102.766 67.871 L117.289 58.566 Z"/></svg><span class="brand-tx">한솔마을 <span>4단지</span></span></a>
     <nav class="nav" id="nav" aria-label="주요 메뉴">
       <a href="#progress">진행 순서</a>
       <a href="#why">주민대표단이란</a>
