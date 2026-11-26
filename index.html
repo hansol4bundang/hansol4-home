@@ -1135,6 +1135,18 @@ html.menu-open { overflow: hidden; }
 .group, .roster { box-shadow: var(--box-shadow-sm) !important; }
 .mcol { box-shadow: var(--box-shadow-sm); }
 .memo2, .tcontact { box-shadow: var(--box-shadow-sm); }
+
+/* ===== 진행 경과: 세로선 + 점 타임라인 ===== */
+.tl-list { position: relative; margin-top: 14px; }
+.tl-list li { position: relative; padding: 0 0 26px 34px !important; border-top: 0 !important; }
+.tl-list li:last-child { padding-bottom: 0 !important; }
+.tl-list li::before { content: ""; position: absolute; left: 0; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 3px solid var(--accent); z-index: 1; box-sizing: border-box; }
+.tl-list li::after { content: ""; position: absolute; left: 7px; top: 22px; bottom: -6px; width: 2px; background: #D5DCE8; }
+.tl-list li:last-child::after { display: none; }
+.tl-col.done .tl-list li::before { background: var(--accent); }
+.tl-col.next .tl-list li::before { border-color: var(--yellow); background: #FFFFFF; }
+.tl-col.next .tl-list li::after { background: repeating-linear-gradient(to bottom, #D5DCE8 0 5px, transparent 5px 9px); }
+.tl-col.done .tl-list li:has(.tl-now)::before { background: var(--yellow); border-color: var(--yellow); box-shadow: 0 0 0 4px rgba(245, 184, 0, 0.25); }
 </style>
 </head>
 <body>
