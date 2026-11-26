@@ -1216,6 +1216,22 @@ html.menu-open { overflow: hidden; }
 
 /* 단계 박스 테두리 제거 */
 .fs, .flow li.last .fs, .t-card, .t-card.aud, .tcontact, .memo2 { border: 0 !important; }
+
+/* ===== 구분선 일괄 통일: 옅은 회색 1px ===== */
+:root { --rule: #E3E3E3; }
+.header, .pg-head, .sec-head, .faq details, .faq { border-bottom-color: var(--rule) !important; }
+.pg-src, .g-row, .fund-info > div, .mres, .flowbox, .faq, .m-warn, .fundp, .jc + .jc { border-top-color: var(--rule) !important; }
+.sec-head { border-bottom-width: 1px !important; }
+.g-row, .mres, .flowbox, .pg-src { border-top-width: 1px !important; }
+.tl-col.next { border-left-color: var(--rule) !important; border-top-color: var(--rule) !important; }
+.burger { border-color: var(--rule) !important; }
+.sec > .wrap, .pg-box { border-color: var(--rule) !important; }
+/* 선처럼 쓰이는 요소 */
+#timeline .tl-list li:not(:last-child)::after { background: var(--rule) !important; }
+#timeline .tl-col.next .tl-list li::after { background: repeating-linear-gradient(to bottom, var(--rule) 0 5px, transparent 5px 9px) !important; }
+.pg li::before { background: var(--rule); }
+.pg li.done + li::before { background: var(--accent); }
+.t-mid::before, .t-mid::after, .t-teams::before, .t-row > .t-card::before { background: var(--rule) !important; }
 </style>
 </head>
 <body>
