@@ -1201,6 +1201,16 @@ html.menu-open { overflow: hidden; }
 
 /* 진행 경과 머리글: 아이콘 없이 제목만 */
 #timeline .tl-ic { display: none !important; }
+
+/* 진행 경과: 박스 배경 없이 */
+#timeline .tl2 { background: transparent; box-shadow: none; padding: 0; border-radius: 0; }
+#timeline .tl-col.next .tl-list li::before { background: #FFFFFF; }
+@media (max-width: 860px) { #timeline .tl2 { padding: 0; } }
+/* 준비 현황: 박스 없이 구분선만 */
+#status .group { border: 0 !important; box-shadow: none !important; border-radius: 0; background: transparent; overflow: visible; }
+#status .g-row, #status .g-row.hi { background: transparent; padding-inline: 4px; }
+/* 모바일: 전체 배경 더 옅은 회색 */
+@media (max-width: 860px) { body { background: #F5F6F5; } }
 </style>
 </head>
 <body>
