@@ -1173,6 +1173,15 @@ html.menu-open { overflow: hidden; }
 /* 연락처: 글자는 검정, 문자·통화 안내만 빨강 */
 .tcontact, .tcontact b, .tcontact a { color: #111111; }
 .tcontact .red { color: var(--red); }
+
+/* ===== 진행 경과 머리글: 알약 배경 없이 깔끔하게 ===== */
+.tl-col .tl-h, .tl-col.done .tl-h, .tl-col.next .tl-h { display: flex !important; align-items: center; gap: 12px; width: 100%; padding: 0 !important; background: transparent !important; border: 0 !important; border-radius: 0 !important; color: #111111 !important; font-size: 22px !important; font-weight: 700; line-height: 1.3; }
+.tl-col .tl-ic { width: 32px !important; height: 32px !important; font-size: 15px !important; flex: none; box-shadow: none; }
+.tl-col.done .tl-ic { background: var(--accent) !important; color: #FFFFFF !important; }
+.tl-col.next .tl-ic { background: #FFFFFF !important; color: var(--accent) !important; border: 2px solid var(--accent); }
+.tl-col .tl-cnt, .tl-col.done .tl-cnt, .tl-col.next .tl-cnt { margin-left: auto; padding: 0 !important; background: transparent !important; color: #555555 !important; font-size: 16px !important; font-weight: 500; border-radius: 0; }
+.tl-col.done .tl-cnt { color: var(--accent) !important; font-weight: 700; }
+.tl-col .tl-list { margin-top: 22px; }
 </style>
 </head>
 <body>
