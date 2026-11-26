@@ -1158,7 +1158,7 @@ html.menu-open { overflow: hidden; }
 .flow li:not(.last) .fs { background: #E6F4EE; }
 
 /* 조직도·카페 단계 영역: 같은 옅은 초록 */
-:root { --area: #F0F0F0; }
+:root { --area: #F5F5F5; }
 #committee .tree { background: var(--area); }
 #committee .t-grp { background: rgba(255, 255, 255, 0.55); border-left-color: var(--area); border-right-color: var(--area); }
 .flow li:not(.last) .fs { background: var(--area); }
@@ -1260,6 +1260,9 @@ h1, h2, h3, h4, .tagline { text-align: left; word-break: keep-all; overflow-wrap
 /* 대표 박스: 다른 카드와 같은 톤으로 차분하게 */
 #committee .t-box { background: var(--area); color: #111111; font-size: 18px !important; padding: 12px 36px; box-shadow: var(--box-shadow-sm); border-radius: 12px; }
 #committee .t-box b { color: var(--accent); font-weight: 700; }
+
+/* 회색 박스 30% 더 밝게(#F0F0F0 → #F5F5F5), 그림자도 함께 옅게 */
+:root { --box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 3px 10px rgba(0, 0, 0, 0.05); }
 </style>
 </head>
 <body>
