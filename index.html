@@ -1254,6 +1254,12 @@ h1, h2, h3, h4, .tagline { text-align: left; word-break: keep-all; overflow-wrap
 
 /* 모바일: 연락처 번호 아래 줄에 안내 문구 */
 @media (max-width: 640px) { .tcontact .red { display: block; margin-top: 2px; } }
+
+.nw { white-space: nowrap; }
+
+/* 대표 박스: 다른 카드와 같은 톤으로 차분하게 */
+#committee .t-box { background: var(--area); color: #111111; font-size: 18px !important; padding: 12px 36px; box-shadow: var(--box-shadow-sm); border-radius: 12px; }
+#committee .t-box b { color: var(--accent); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -1553,13 +1559,13 @@ h1, h2, h3, h4, .tagline { text-align: left; word-break: keep-all; overflow-wrap
               </dl>
             </div>
             <div class="memo2">
-              <div class="m-h">받는 분 통장 메모 <span class="req">필수</span></div>
-              <p class="m-rule"><b>동·호수 숫자 7자리</b> (동 3자리 + 호수 4자리)</p>
+              <div class="m-h">받는 분 통장 메모 <span class="nw"><span class="req">필수</span> :</span> <span class="nw">동·호수 숫자 7자리</span></div>
+              <p class="m-rule">예시)</p>
               <ul class="memo-ex">
                 <li>417동 103호 → <b class="big">4170103</b></li>
                 <li>414동 1704호 → <b class="big">4141704</b></li>
               </ul>
-              <p class="m-tip">호수가 3자리이면 앞에 <b>0</b>을 붙여 주세요.<br>(103호 → 0103)</p>
+              <p class="m-tip">동 3자리 + 호수 4자리 / 호수가 3자리면 앞에 0을 붙여주세요 (103호 → 0103)</p>
               <p class="m-warn">메모가 양식과 다르면 <b>카페 가입이 어렵습니다.</b></p>
             </div>
           </div>
