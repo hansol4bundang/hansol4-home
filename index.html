@@ -1158,7 +1158,7 @@ html.menu-open { overflow: hidden; }
 .flow li:not(.last) .fs { background: #E6F4EE; }
 
 /* 조직도·카페 단계 영역: 같은 옅은 초록 */
-:root { --area: #F0F2F1; }
+:root { --area: #F0F0F0; }
 #committee .tree { background: var(--area); }
 #committee .t-grp { background: rgba(255, 255, 255, 0.55); border-left-color: var(--area); border-right-color: var(--area); }
 .flow li:not(.last) .fs { background: var(--area); }
@@ -1209,6 +1209,10 @@ html.menu-open { overflow: hidden; }
 /* 준비 현황: 박스 없이 구분선만 */
 #status .group { border: 0 !important; box-shadow: none !important; border-radius: 0; background: transparent; overflow: visible; }
 #status .g-row, #status .g-row.hi { background: transparent; padding-inline: 4px; }
+
+/* 작은 내용 박스: 모두 같은 옅은 회색 */
+.tcontact, .memo2, .mc.who, .t-card, .t-card.aud, .flow li:not(.last) .fs { background: var(--area) !important; }
+.tcontact, .t-card, .t-card.aud, .fs { border-color: var(--area) !important; }
 </style>
 </head>
 <body>
