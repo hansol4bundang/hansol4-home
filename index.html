@@ -1232,6 +1232,19 @@ html.menu-open { overflow: hidden; }
 .pg li::before { background: var(--rule); }
 .pg li.done + li::before { background: var(--accent); }
 .t-mid::before, .t-mid::after, .t-teams::before, .t-row > .t-card::before { background: var(--rule) !important; }
+
+/* ===== 줄바꿈·정렬 규칙 =====
+   1) 한 문장은 한 줄에서 시작(문장마다 <br>)
+   2) 한 줄이 길면 어절(띄어쓰기) 단위로만 내림 — 단어 중간에서 끊지 않음
+   3) 문장은 좌측정렬, 고아 단어(한 글자·한 어절만 외톨이) 방지 */
+body { word-break: keep-all; overflow-wrap: normal; line-break: strict; }
+p, li, dd, dt, td, summary, .a, .g-body, .lead, .sec-head p { text-align: left; word-break: keep-all; overflow-wrap: normal; text-wrap: pretty; }
+h1, h2, h3, h4, .tagline { text-align: left; word-break: keep-all; overflow-wrap: normal; text-wrap: balance; }
+/* 길어서 어쩔 수 없는 문자열(이메일·계좌·주소)만 예외로 끊김 허용 */
+.acct, .phn, .tcontact a, a[href^="mailto"], .tl-link { overflow-wrap: anywhere; }
+/* 가운데 정렬로 남아 있던 문장 */
+.tl-foot, .mres-note, .mnote, .jc-note, .kk-warn, .hero-note { text-align: left; }
+.mswipe { text-align: center; }
 </style>
 </head>
 <body>
@@ -1268,7 +1281,7 @@ html.menu-open { overflow: hidden; }
       <p class="lead">우리 단지 재건축의 모든 과정과 필요한 정보를 한눈에 보실 수 있습니다.</p>
         </div>
       </div>
-      <span class="hero-note">※ 이해를 돕기 위한 예시 이미지입니다. 실제 설계안이 아닙니다.</span>
+      <span class="hero-note">※ 이해를 돕기 위한 예시 이미지입니다.<br>실제 설계안이 아닙니다.</span>
     </div>
   </section>
 
@@ -1361,11 +1374,11 @@ html.menu-open { overflow: hidden; }
           <div class="mc who"><span class="ml">사업시행자</span>소유주가 설립하는 조합</div>
           <div class="mc pro"><span class="ml">장점</span><ul>
             <li>총회에서 소유주가 시공사 선정, 예산 등을 직접 의결·통제해 소유주 이익을 반영할 여지가 큽니다.</li>
-            <li>신탁 보수가 따로 들지 않습니다. (단, 운영비·용역비 등은 사업비로 부담)</li>
+            <li>신탁 보수가 따로 들지 않습니다.<br>(단, 운영비·용역비 등은 사업비로 부담)</li>
             <li>조합 임원 선출·해임, 회계·계약 공개 등으로 소유주가 운영을 직접 살펴볼 수 있습니다.</li>
           </ul></div>
           <div class="mc con"><span class="ml">단점·유의</span><ul>
-            <li>구역 지정 후 조합설립 절차가 추가되어 기간이 길어질 확률이 있습니다. (동의가 빠르면 신탁과의 차이가 작을 수 있음)</li>
+            <li>구역 지정 후 조합설립 절차가 추가되어 기간이 길어질 확률이 있습니다.<br>(동의가 빠르면 신탁과의 차이가 작을 수 있음)</li>
             <li>사업 진행이 조합 임원진의 역량과 소유주 간 의견 조율에 좌우됩니다.</li>
             <li>조합이 자금을 조달해 공사비를 지급하므로, 조합 신용도에 따라 금리·지급 조건이 달라질 수 있습니다.</li>
           </ul></div>
@@ -1374,13 +1387,13 @@ html.menu-open { overflow: hidden; }
           <div class="mh"><h3>신탁방식</h3><small>도시정비법 제27조</small></div>
           <div class="mc who"><span class="ml">사업시행자</span>신탁사 (외부 전문 회사)</div>
           <div class="mc pro"><span class="ml">장점</span><ul>
-            <li>조합설립 절차가 없어 기간이 단축될 확률이 있습니다. (법정 동의 요건 충족 필요, 동의 확보 속도에 따라 다름)</li>
+            <li>조합설립 절차가 없어 기간이 단축될 확률이 있습니다.<br>(법정 동의 요건 충족 필요, 동의 확보 속도에 따라 다름)</li>
             <li>신탁사(회사)가 운영해 조합 임원·소유주 간 갈등으로 일정이 지체될 가능성이 상대적으로 낮습니다.</li>
-            <li>신탁사가 자금을 조달·관리해 시공사에 대한 자금 의존도가 낮아집니다. (조달 금융비용은 사업비에 포함)</li>
+            <li>신탁사가 자금을 조달·관리해 시공사에 대한 자금 의존도가 낮아집니다.<br>(조달 금융비용은 사업비에 포함)</li>
           </ul></div>
           <div class="mc con"><span class="ml">단점·유의</span><ul>
             <li>신탁사(회사) 주도이기 때문에, 조합방식보다 소유주 통제력이 약합니다.</li>
-            <li>신탁 보수가 발생합니다. (한솔 4단지 사업성 기준 약 400억 원 내외, 산정 기준에 따라 달라질 수 있음)</li>
+            <li>신탁 보수가 발생합니다.<br>(한솔 4단지 사업성 기준 약 400억 원 내외, 산정 기준에 따라 달라질 수 있음)</li>
             <li>법에서 정한 의결 사항 외 사안의 소유주 투표 범위는 신탁계약에 따라 달라지며, 계약 해지·신탁사 교체는 정해진 절차와 동의 요건을 따라야 합니다.</li>
           </ul></div>
         </div>
@@ -1390,11 +1403,11 @@ html.menu-open { overflow: hidden; }
           <div class="mc pro"><span class="ml">장점</span><ul>
             <li>공공기관이 총괄해 국가의 감독·감사 체계 안에서 관리되며, 투명성·신뢰성이 높다는 평가가 있습니다.</li>
             <li>공공기관이 재원을 조달해 비교적 안정적인 자금 조달이 가능하다고 알려져 있습니다.</li>
-            <li>시행자 지정 후 조합설립 절차 없이 진행되어 기간이 단축될 확률이 있습니다. (지정 절차·동의 확보 속도에 따라 달라짐)</li>
+            <li>시행자 지정 후 조합설립 절차 없이 진행되어 기간이 단축될 확률이 있습니다.<br>(지정 절차·동의 확보 속도에 따라 달라짐)</li>
           </ul></div>
           <div class="mc con"><span class="ml">단점·유의</span><ul>
             <li>공공성 조건(공공임대 등)에 따라 일반분양 물량과 분담금이 달라질 수 있고, 상품성(단지 구성 등)에 제약이 생길 수 있습니다.</li>
-            <li>조합방식보다 소유주 통제력이 약합니다. (주민대표회의로 의견을 반영하나 최종 시행 권한은 시행자)</li>
+            <li>조합방식보다 소유주 통제력이 약합니다.<br>(주민대표회의로 의견을 반영하나 최종 시행 권한은 시행자)</li>
             <li>공공기관의 의사결정이 절차 중심으로 진행되어 속도·유연성이 낮아질 수 있습니다.</li>
           </ul></div>
         </div>
@@ -1494,9 +1507,9 @@ html.menu-open { overflow: hidden; }
       <div class="faq">
         <details><summary>재건축은 어떤 순서로 진행되나요?</summary><div class="a">일반적으로 아래 순서로 진행되며, 단계마다 소유주분들의 동의와 행정 절차를 거칩니다.<br><b>① 주민대표단 구성 → ② 사업방식(조합·신탁) 결정 → ③ 특별정비구역 지정 → ④ 사업시행자 지정(신탁) 또는 조합 설립(조합) → ⑤ 시공사 선정 → ⑥ 사업시행계획인가 → ⑦ 분양신청·관리처분계획인가 → ⑧ 이주·철거·착공 → ⑨ 준공·입주</b><br>우리 단지는 주민대표단이 구성되어 사업방식을 검토하고 있는 단계입니다.<br>세부 순서는 사업방식에 따라 일부 달라질 수 있으며, 진행 상황은 그때그때 안내드리겠습니다.</div></details>
         <details><summary>우리 단지는 조합 방식과 신탁 방식 중 무엇으로 하나요?</summary><div class="a"><b>아직 정해지지 않았습니다.</b><br>주민설명회를 통해 각 방식의 장단점을 충분히 설명드린 뒤 결정합니다.<br>신탁 등 사업자를 정하는 경우에도 소유주 과반수의 동의를 받아 결정할 예정입니다.<br>[설명회 일정은 확정되는 대로 안내드리겠습니다.]</div></details>
-        <details><summary>진행 소식은 어디서 보나요?</summary><div class="a">한솔4단지재건축카페(모금전용)과 소유주 카카오톡방을 통해 안내드립니다. 구역 지정 등 공식 절차는 성남시 홈페이지 고시·공고에서도 확인하실 수 있습니다.<br>소유주방에 입장하지 않으신 분은 대표번호 <a href="sms:010-5926-4459">010-5926-4459</a> 로 문자 주시면 입장 도와드리겠습니다.<br>확인되지 않은 소문보다는 주민대표단의 공식 안내를 기준으로 봐 주시기 바랍니다.</div></details>
+        <details><summary>진행 소식은 어디서 보나요?</summary><div class="a">한솔4단지재건축카페(모금전용)과 소유주 카카오톡방을 통해 안내드립니다.<br>구역 지정 등 공식 절차는 성남시 홈페이지 고시·공고에서도 확인하실 수 있습니다.<br>소유주방에 입장하지 않으신 분은 대표번호 <a href="sms:010-5926-4459">010-5926-4459</a> 로 문자 주시면 입장 도와드리겠습니다.<br>확인되지 않은 소문보다는 주민대표단의 공식 안내를 기준으로 봐 주시기 바랍니다.</div></details>
         <details><summary>주민대표단은 무엇인가요?</summary><div class="a">노후계획도시특별법에 근거하여 소유주분들을 대표하여 재건축 초기 준비를 맡는 법정 조직입니다.<br>소유주 과반수의 동의와 성남시의 승인을 받아 구성되며, 5명 이상 25명 이하로 이루어집니다.<br>사업방식 검토, 특별정비계획 준비, 구역 지정 제안, 주민설명회 개최 등을 맡습니다.</div></details>
-        <details><summary>재건축 하면 매도가 불가능한가요?</summary><div class="a"><b>현재 단계에서는 정상적으로 매도하실 수 있습니다.</b><br>다만 다만 분당은 투기과열지구여서, 사업이 진행되어 아래 시점이 지나면 그 이후 매수하신 분은 원칙적으로 조합원(새 아파트 분양대상)이 될 수 없습니다.<br>조합 방식: 조합설립인가 이후<br>신탁 방식: 사업시행자 지정 고시 이후<br>10년 이상 보유하고 5년 이상 거주한 1세대 1주택자 등 법에서 정한 예외도 있습니다. 해당 시점이 다가오면 미리 안내드리겠지만 개개인마다 상황이 다를 수 있어 일률적인 안내가 어려운 점 양해 부탁드립니다.</div></details>
+        <details><summary>재건축 하면 매도가 불가능한가요?</summary><div class="a"><b>현재 단계에서는 정상적으로 매도하실 수 있습니다.</b><br>다만 다만 분당은 투기과열지구여서, 사업이 진행되어 아래 시점이 지나면 그 이후 매수하신 분은 원칙적으로 조합원(새 아파트 분양대상)이 될 수 없습니다.<br>조합 방식: 조합설립인가 이후<br>신탁 방식: 사업시행자 지정 고시 이후<br>10년 이상 보유하고 5년 이상 거주한 1세대 1주택자 등 법에서 정한 예외도 있습니다.<br>해당 시점이 다가오면 미리 안내드리겠지만 개개인마다 상황이 다를 수 있어 일률적인 안내가 어려운 점 양해 부탁드립니다.</div></details>
       </div>
     </div>
   </section>
@@ -1536,7 +1549,7 @@ html.menu-open { overflow: hidden; }
                 <li>417동 103호 → <b class="big">4170103</b></li>
                 <li>414동 1704호 → <b class="big">4141704</b></li>
               </ul>
-              <p class="m-tip">호수가 3자리이면 앞에 <b>0</b>을 붙여 주세요. (103호 → 0103)</p>
+              <p class="m-tip">호수가 3자리이면 앞에 <b>0</b>을 붙여 주세요.<br>(103호 → 0103)</p>
               <p class="m-warn">메모가 양식과 다르면 <b>카페 가입이 어렵습니다.</b></p>
             </div>
           </div>
@@ -1550,7 +1563,7 @@ html.menu-open { overflow: hidden; }
           <li><div class="fs"><b>① 대표 번호로 문자</b><span class="phn">010-5926-4459 <button class="copy" type="button" data-copy="010-5926-4459">복사</button></span></div></li>
           <li class="last"><div class="fs"><b>② 카카오톡 방 초대</b><span>빠른 소식 받기</span></div></li>
         </ol>
-        <p class="kk-warn">※ 대표 번호는 문자만 받을 수 있습니다. (전화 수신 불가)</p>
+        <p class="kk-warn">※ 대표 번호는 문자만 받을 수 있습니다.<br>(전화 수신 불가)</p>
         <div class="jc-btn"><a class="btn ph-btn" id="phone-btn" href="sms:01059264459">문자 보내기 010-5926-4459</a></div>
       </div>
     </div>
