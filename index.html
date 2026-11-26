@@ -1182,6 +1182,25 @@ html.menu-open { overflow: hidden; }
 .tl-col .tl-cnt, .tl-col.done .tl-cnt, .tl-col.next .tl-cnt { margin-left: auto; padding: 0 !important; background: transparent !important; color: #555555 !important; font-size: 16px !important; font-weight: 500; border-radius: 0; }
 .tl-col.done .tl-cnt { color: var(--accent) !important; font-weight: 700; }
 .tl-col .tl-list { margin-top: 22px; }
+
+/* ===== 진행 경과: 두 칸을 하나의 묶음(박스)으로 ===== */
+#timeline .tl2 { gap: 0 !important; background: var(--area); border-radius: 18px; padding: 30px 32px; box-shadow: var(--box-shadow-sm); }
+#timeline .tl-col.done { padding-right: 32px; }
+#timeline .tl-col.next { padding-left: 32px; border-left: 1px solid #D5DDD9 !important; }
+#timeline .tl-list li:not(:last-child)::after { background: #D0D8D4; }
+#timeline .tl-col.next .tl-list li::after { background: repeating-linear-gradient(to bottom, #C3CDC8 0 5px, transparent 5px 9px); }
+#timeline .tl-col .tl-ic, #timeline .tl-col.next .tl-ic { box-shadow: none; }
+#timeline .tl-col.next .tl-ic { background: var(--area) !important; }
+#timeline .tl-list li::before { background-clip: padding-box; }
+#timeline .tl-col.next .tl-list li::before { background: var(--area); }
+@media (max-width: 860px) {
+  #timeline .tl2 { padding: 22px 18px; }
+  #timeline .tl-col.done { padding-right: 0; }
+  #timeline .tl-col.next { padding-left: 0; border-left: 0 !important; border-top: 1px solid #D5DDD9 !important; margin-top: 26px; padding-top: 26px; }
+}
+
+/* 진행 경과 머리글: 아이콘 없이 제목만 */
+#timeline .tl-ic { display: none !important; }
 </style>
 </head>
 <body>
