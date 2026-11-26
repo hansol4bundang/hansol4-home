@@ -1147,6 +1147,12 @@ html.menu-open { overflow: hidden; }
 .tl-col.next .tl-list li::before { border-color: var(--yellow); background: #FFFFFF; }
 .tl-col.next .tl-list li::after { background: repeating-linear-gradient(to bottom, #DCE6E2 0 5px, transparent 5px 9px); }
 .tl-col.done .tl-list li:has(.tl-now)::before { background: var(--yellow); border-color: var(--yellow); box-shadow: 0 0 0 4px rgba(64, 184, 139, 0.25); }
+
+/* 조직도: 옅은 배경 */
+#committee .tree { background: #F3F8F6; border-radius: 18px; padding: 28px 12px 18px; }
+#committee .t-grp { background: #E6F4EE; border-left-color: #F3F8F6; border-right-color: #F3F8F6; }
+#committee .t-card.aud { background: #FFFFFF; }
+@media (max-width: 900px) { #committee .tree { padding: 20px 12px; } #committee .t-grp { border: 0; } }
 </style>
 </head>
 <body>
